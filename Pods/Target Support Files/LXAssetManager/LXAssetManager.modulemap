@@ -1,0 +1,6 @@
+framework module LXAssetManager {
+  umbrella header "LXAssetManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_LXAssetManagerModule_LXAssetManagerModuleUITests {
+  umbrella header "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

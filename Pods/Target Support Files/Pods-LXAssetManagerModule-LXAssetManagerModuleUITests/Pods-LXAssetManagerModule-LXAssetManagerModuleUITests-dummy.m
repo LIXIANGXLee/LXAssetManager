@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_LXAssetManagerModule_LXAssetManagerModuleUITests : NSObject
+@end
+@implementation PodsDummy_Pods_LXAssetManagerModule_LXAssetManagerModuleUITests
+@end

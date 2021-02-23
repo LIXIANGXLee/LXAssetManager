@@ -1,0 +1,16 @@
+PODS:
+  - LXAssetManager (0.1.0)
+
+DEPENDENCIES:
+  - LXAssetManager (from `./`)
+
+EXTERNAL SOURCES:
+  LXAssetManager:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  LXAssetManager: 343f9f5f429a78b31561b8bc78f0c90cb427275d
+
+PODFILE CHECKSUM: caa64eeca4a43775f285ca464ac5cd00bbd04c19
+
+COCOAPODS: 1.10.1
