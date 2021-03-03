@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1131F8FF781DD96B353FE3FB6E7DD996 /* LXAssetAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B64742325F715125CF637ED6DEE317C /* LXAssetAuthorization.m */; };
-		12532D678919F54F01104A8C180C106D /* LXAssetSave.h in Headers */ = {isa = PBXBuildFile; fileRef = D35D52115E5A4B17A4E6FD90FD6637EE /* LXAssetSave.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1131F8FF781DD96B353FE3FB6E7DD996 /* LXAssetAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DD8DC6C1E6D12B9410DFF31651C20 /* LXAssetAuthorization.m */; };
+		12532D678919F54F01104A8C180C106D /* LXAssetSave.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2DBC85674B46F52ACD2B9B1EB4AD35 /* LXAssetSave.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CDC6F814325C173D6568567A45F146A /* Pods-LXAssetManagerModuleTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9D4472ADA93B4E40BE800F251890613 /* Pods-LXAssetManagerModuleTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		395DD437946886CED4396E9595162098 /* LXAssetSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD7264DB49BBF30D488F7C4BE0AB8B4 /* LXAssetSave.m */; };
+		395DD437946886CED4396E9595162098 /* LXAssetSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82A0F28411A4936E0390119B6FAE75 /* LXAssetSave.m */; };
 		4CBBDB9277FDC6C51D9757DD8DA33453 /* Pods-LXAssetManagerModule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 344153F4A19B42634448A9C9437B374B /* Pods-LXAssetManagerModule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		571C3E0FFB8A68604B075DA0FBDFEF2B /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4403D73BE26FC91F2B33BAD275FC41C5 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FD5837A7E0C62C6AAACBDEE71BF6EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
@@ -19,78 +19,77 @@
 		90DB18FF72CD9CA5ECBF371E18EF0B4D /* Pods-LXAssetManagerModuleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE3038E5F3970AF4A82ACB2429377CA /* Pods-LXAssetManagerModuleTests-dummy.m */; };
 		9D1A898D7EB1ABC8CD5FCF51024648CF /* Pods-LXAssetManagerModule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A351C24790300CC72C1317DA86231B /* Pods-LXAssetManagerModule-dummy.m */; };
 		A202A28C8FD7B6F2EE21269AC60C14BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		A9B4EF5DC1278AD842BA7B2151293733 /* LXAssetManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C45A522B8B9B39EC8D5950230A9C91B6 /* LXAssetManager-dummy.m */; };
+		A9B4EF5DC1278AD842BA7B2151293733 /* LXAssetManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67239F62C9E5C6ADB44460C76A846B0B /* LXAssetManager-dummy.m */; };
 		D797BF59C2BE234065EC5CFA2FF23445 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E34A4773E2B83B442DC91E8105DF0253 /* LXAssetAuthorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C1572F25834A3617936BA5CC9312DF /* LXAssetAuthorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E4398B9348BED0D21CD79CD676DC6EB3 /* LXAssetManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 447A37237BC42B57864F3D46D3D460F0 /* LXAssetManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E34A4773E2B83B442DC91E8105DF0253 /* LXAssetAuthorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4B434F48CC2CE37A819002C8FB225B /* LXAssetAuthorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4398B9348BED0D21CD79CD676DC6EB3 /* LXAssetManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DE41ECF84420B04C619B635168DC0AA /* LXAssetManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0E5F7D933FB63938786321E4AE8D86F2 /* PBXContainerItemProxy */ = {
+		2BBB56CCD93045200892C092BBC8A107 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7289EAE9DA0B71781681BA800C821447;
 			remoteInfo = LXAssetManager;
 		};
-		6981221922C0225BABFFECDF482349CC /* PBXContainerItemProxy */ = {
+		63CF72EA3B32F75ADF5CAC065EE2A053 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7289EAE9DA0B71781681BA800C821447;
+			remoteInfo = LXAssetManager;
+		};
+		E69B72A71EC27C2B92C438996FB1F55A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CBF5FBB3D1E7779C1B34221290A26415;
 			remoteInfo = "Pods-LXAssetManagerModule";
 		};
-		B1DF8330642FB88665192DF2810DE25A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7289EAE9DA0B71781681BA800C821447;
-			remoteInfo = LXAssetManager;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B3DD8DC6C1E6D12B9410DFF31651C20 /* LXAssetAuthorization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXAssetAuthorization.m; path = LXAssetManager/LXAssetAuthorization.m; sourceTree = "<group>"; };
 		0F65C3E2EE4891CD98E98F2DDCBC4CDB /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1054B35951DCCEB88030A8F8B4B4FA51 /* Pods_LXAssetManagerModuleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXAssetManagerModuleTests.framework; path = "Pods-LXAssetManagerModuleTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11BE043A3D9F0F0600ABE135EE6012EF /* LXAssetManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LXAssetManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1E4B434F48CC2CE37A819002C8FB225B /* LXAssetAuthorization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXAssetAuthorization.h; path = LXAssetManager/LXAssetAuthorization.h; sourceTree = "<group>"; };
+		1E5E08E50F0D39023051737291BFF11F /* LXAssetManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXAssetManager.modulemap; sourceTree = "<group>"; };
 		267C4DC1C63877CF419F8644356885EC /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.modulemap"; sourceTree = "<group>"; };
-		2FD7264DB49BBF30D488F7C4BE0AB8B4 /* LXAssetSave.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXAssetSave.m; path = LXAssetManager/LXAssetSave.m; sourceTree = "<group>"; };
 		30BB0E20842EA8B5281452EC8203BE8A /* Pods-LXAssetManagerModuleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LXAssetManagerModuleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		316730710355FAB66DE38DAAFBA69C7A /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-frameworks.sh"; sourceTree = "<group>"; };
 		344153F4A19B42634448A9C9437B374B /* Pods-LXAssetManagerModule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXAssetManagerModule-umbrella.h"; sourceTree = "<group>"; };
 		3CA04B93C96AAE3916CC0D2A07152948 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		40C1572F25834A3617936BA5CC9312DF /* LXAssetAuthorization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXAssetAuthorization.h; path = LXAssetManager/LXAssetAuthorization.h; sourceTree = "<group>"; };
+		3D82A0F28411A4936E0390119B6FAE75 /* LXAssetSave.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXAssetSave.m; path = LXAssetManager/LXAssetSave.m; sourceTree = "<group>"; };
 		4403D73BE26FC91F2B33BAD275FC41C5 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h"; sourceTree = "<group>"; };
-		447A37237BC42B57864F3D46D3D460F0 /* LXAssetManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXAssetManager-umbrella.h"; sourceTree = "<group>"; };
 		4E537F7E9A2809B29DB995DC0530447B /* Pods-LXAssetManagerModule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModule-acknowledgements.plist"; sourceTree = "<group>"; };
 		5881C1F3CABA870A3883A2F0BFEAC6C4 /* Pods-LXAssetManagerModuleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModuleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		610AA2D8D6C0E203600E9B9897D7C7FC /* Pods-LXAssetManagerModuleTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModuleTests-Info.plist"; sourceTree = "<group>"; };
 		63C858A2B16191479D5AC5A2F191A778 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.release.xcconfig"; sourceTree = "<group>"; };
-		705F2BBFC847F2DE44B94F35A0A1265B /* LXAssetManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXAssetManager-Info.plist"; sourceTree = "<group>"; };
+		67239F62C9E5C6ADB44460C76A846B0B /* LXAssetManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXAssetManager-dummy.m"; sourceTree = "<group>"; };
+		6C1FA08801EEBBD61CFD57401FB70EEC /* LXAssetManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXAssetManager-Info.plist"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		753C68F8AB4445C5A2933C6AEE1210CA /* Pods-LXAssetManagerModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModule.release.xcconfig"; sourceTree = "<group>"; };
-		7B64742325F715125CF637ED6DEE317C /* LXAssetAuthorization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXAssetAuthorization.m; path = LXAssetManager/LXAssetAuthorization.m; sourceTree = "<group>"; };
 		7CEEB71463349097EF582CDA85AB17A0 /* Pods-LXAssetManagerModule-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModule-Info.plist"; sourceTree = "<group>"; };
-		8F3649A2293E71FEDD909599C11DDB9B /* LXAssetManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXAssetManager-prefix.pch"; sourceTree = "<group>"; };
+		8B2DBC85674B46F52ACD2B9B1EB4AD35 /* LXAssetSave.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXAssetSave.h; path = LXAssetManager/LXAssetSave.h; sourceTree = "<group>"; };
+		8DE41ECF84420B04C619B635168DC0AA /* LXAssetManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXAssetManager-umbrella.h"; sourceTree = "<group>"; };
 		913450B4446977EE38C569715A95D2B8 /* Pods-LXAssetManagerModuleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModuleTests.release.xcconfig"; sourceTree = "<group>"; };
 		9CCD925C7284E8E0E57A06A105BDEAE3 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A103DD96518CEF1222ECB17741922E36 /* Pods_LXAssetManagerModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXAssetManagerModule.framework; path = "Pods-LXAssetManagerModule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B20F8D09CBFEE4DBD09229E7AB77C695 /* LXAssetManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXAssetManager.debug.xcconfig; sourceTree = "<group>"; };
 		B73A0B99792600157980EF0D820749F8 /* Pods-LXAssetManagerModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModule.debug.xcconfig"; sourceTree = "<group>"; };
-		BBA2205CD63D39EAF9837B01A920DAC4 /* LXAssetManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXAssetManager.debug.xcconfig; sourceTree = "<group>"; };
 		BFDE60C87F132A812550761CA48EF9E3 /* Pods_LXAssetManagerModule_LXAssetManagerModuleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXAssetManagerModule_LXAssetManagerModuleUITests.framework; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C45A522B8B9B39EC8D5950230A9C91B6 /* LXAssetManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXAssetManager-dummy.m"; sourceTree = "<group>"; };
+		BFEF3D1FE1765114C9B10E8F0CBAE718 /* LXAssetManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXAssetManager-prefix.pch"; sourceTree = "<group>"; };
 		C82D07CADAFADB7846FA39B782DEF5DE /* Pods-LXAssetManagerModule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXAssetManagerModule.modulemap"; sourceTree = "<group>"; };
-		CA550421D9980031E4D2C0423AAA5A5B /* LXAssetManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXAssetManager.modulemap; sourceTree = "<group>"; };
 		CCB832BE7DFC865F596D6E0F5EC15D6D /* LXAssetManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LXAssetManager.framework; path = LXAssetManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D35D52115E5A4B17A4E6FD90FD6637EE /* LXAssetSave.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXAssetSave.h; path = LXAssetManager/LXAssetSave.h; sourceTree = "<group>"; };
 		D3A351C24790300CC72C1317DA86231B /* Pods-LXAssetManagerModule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXAssetManagerModule-dummy.m"; sourceTree = "<group>"; };
 		D55606D744EB78FE682A1DFEE1D199AF /* Pods-LXAssetManagerModuleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModuleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D72AE0E656827732C28290899AC6AD0A /* Pods-LXAssetManagerModule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LXAssetManagerModule-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D9D4472ADA93B4E40BE800F251890613 /* Pods-LXAssetManagerModuleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXAssetManagerModuleTests-umbrella.h"; sourceTree = "<group>"; };
 		E2103E64B1FDD8D157DDF763CE2CC878 /* Pods-LXAssetManagerModule-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXAssetManagerModule-frameworks.sh"; sourceTree = "<group>"; };
+		E2A9D00B8CBABCAB3E6D80F7EA14A146 /* LXAssetManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXAssetManager.release.xcconfig; sourceTree = "<group>"; };
 		E3F8802CB2F37AE08743E4BA79C1F0AE /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-dummy.m"; sourceTree = "<group>"; };
-		E9D35E01CB6EFEA73F98D774DE754007 /* LXAssetManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXAssetManager.release.xcconfig; sourceTree = "<group>"; };
 		EBE3038E5F3970AF4A82ACB2429377CA /* Pods-LXAssetManagerModuleTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXAssetManagerModuleTests-dummy.m"; sourceTree = "<group>"; };
 		F0ACEE91FAE9D8E019910219543B61A3 /* Pods-LXAssetManagerModuleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXAssetManagerModuleTests.modulemap"; sourceTree = "<group>"; };
 		F9A08BBF9F4F47B39776AE415B932A3B /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +131,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		087ABD8959D3AA91B189DDE14EB0BF19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6A9791AE9341EB27D8047FA4999BF854 /* LXAssetManager */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		331E83959C73EE0C79141C643B352AB6 /* Pods-LXAssetManagerModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,20 +180,32 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		848E926BAAC508F36C805F2B67F01E27 /* Pod */ = {
+		6A9791AE9341EB27D8047FA4999BF854 /* LXAssetManager */ = {
 			isa = PBXGroup;
 			children = (
-				11BE043A3D9F0F0600ABE135EE6012EF /* LXAssetManager.podspec */,
+				1E4B434F48CC2CE37A819002C8FB225B /* LXAssetAuthorization.h */,
+				0B3DD8DC6C1E6D12B9410DFF31651C20 /* LXAssetAuthorization.m */,
+				8B2DBC85674B46F52ACD2B9B1EB4AD35 /* LXAssetSave.h */,
+				3D82A0F28411A4936E0390119B6FAE75 /* LXAssetSave.m */,
+				909A0A43F97B1C62790EB4374335FF80 /* Support Files */,
 			);
-			name = Pod;
+			name = LXAssetManager;
+			path = LXAssetManager;
 			sourceTree = "<group>";
 		};
-		9268753C00EE0D4FE5BDE7EF47D94C3B /* Development Pods */ = {
+		909A0A43F97B1C62790EB4374335FF80 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F7E71074AA90229564D97A9315E6B00C /* LXAssetManager */,
+				1E5E08E50F0D39023051737291BFF11F /* LXAssetManager.modulemap */,
+				67239F62C9E5C6ADB44460C76A846B0B /* LXAssetManager-dummy.m */,
+				6C1FA08801EEBBD61CFD57401FB70EEC /* LXAssetManager-Info.plist */,
+				BFEF3D1FE1765114C9B10E8F0CBAE718 /* LXAssetManager-prefix.pch */,
+				8DE41ECF84420B04C619B635168DC0AA /* LXAssetManager-umbrella.h */,
+				B20F8D09CBFEE4DBD09229E7AB77C695 /* LXAssetManager.debug.xcconfig */,
+				E2A9D00B8CBABCAB3E6D80F7EA14A146 /* LXAssetManager.release.xcconfig */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "../Target Support Files/LXAssetManager";
 			sourceTree = "<group>";
 		};
 		A0BA4B143C4501DCE5F7C0F380896CB5 /* Products */ = {
@@ -221,8 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				9268753C00EE0D4FE5BDE7EF47D94C3B /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				087ABD8959D3AA91B189DDE14EB0BF19 /* Pods */,
 				A0BA4B143C4501DCE5F7C0F380896CB5 /* Products */,
 				F573423BAEE27F8A005E324F9F6FCE50 /* Targets Support Files */,
 			);
@@ -244,35 +263,6 @@
 				42A6CA152359590D79762FCEFC286207 /* Pods-LXAssetManagerModuleTests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		F7E71074AA90229564D97A9315E6B00C /* LXAssetManager */ = {
-			isa = PBXGroup;
-			children = (
-				40C1572F25834A3617936BA5CC9312DF /* LXAssetAuthorization.h */,
-				7B64742325F715125CF637ED6DEE317C /* LXAssetAuthorization.m */,
-				D35D52115E5A4B17A4E6FD90FD6637EE /* LXAssetSave.h */,
-				2FD7264DB49BBF30D488F7C4BE0AB8B4 /* LXAssetSave.m */,
-				848E926BAAC508F36C805F2B67F01E27 /* Pod */,
-				F931B68DDB116A325F7D0E7CE2288CA7 /* Support Files */,
-			);
-			name = LXAssetManager;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		F931B68DDB116A325F7D0E7CE2288CA7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CA550421D9980031E4D2C0423AAA5A5B /* LXAssetManager.modulemap */,
-				C45A522B8B9B39EC8D5950230A9C91B6 /* LXAssetManager-dummy.m */,
-				705F2BBFC847F2DE44B94F35A0A1265B /* LXAssetManager-Info.plist */,
-				8F3649A2293E71FEDD909599C11DDB9B /* LXAssetManager-prefix.pch */,
-				447A37237BC42B57864F3D46D3D460F0 /* LXAssetManager-umbrella.h */,
-				BBA2205CD63D39EAF9837B01A920DAC4 /* LXAssetManager.debug.xcconfig */,
-				E9D35E01CB6EFEA73F98D774DE754007 /* LXAssetManager.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/LXAssetManager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +317,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				BB4586F2AE8B80B71F34ED45C49E91A7 /* PBXTargetDependency */,
+				38BFC29AE29968A5C4DC7CF63701B7FC /* PBXTargetDependency */,
 			);
 			name = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests";
 			productName = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests";
@@ -364,7 +354,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5EF62E7AE26EB004238BD543391B3892 /* PBXTargetDependency */,
+				328C2430BE50B8E6DDFADCEED1A59485 /* PBXTargetDependency */,
 			);
 			name = "Pods-LXAssetManagerModuleTests";
 			productName = "Pods-LXAssetManagerModuleTests";
@@ -383,7 +373,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				930CF71ECF7681A09D411A85387F557D /* PBXTargetDependency */,
+				8D73592BA8BA8A7F60E2476B9EF0B1B9 /* PBXTargetDependency */,
 			);
 			name = "Pods-LXAssetManagerModule";
 			productName = "Pods-LXAssetManagerModule";
@@ -400,7 +390,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -489,30 +479,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5EF62E7AE26EB004238BD543391B3892 /* PBXTargetDependency */ = {
+		328C2430BE50B8E6DDFADCEED1A59485 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-LXAssetManagerModule";
 			target = CBF5FBB3D1E7779C1B34221290A26415 /* Pods-LXAssetManagerModule */;
-			targetProxy = 6981221922C0225BABFFECDF482349CC /* PBXContainerItemProxy */;
+			targetProxy = E69B72A71EC27C2B92C438996FB1F55A /* PBXContainerItemProxy */;
 		};
-		930CF71ECF7681A09D411A85387F557D /* PBXTargetDependency */ = {
+		38BFC29AE29968A5C4DC7CF63701B7FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LXAssetManager;
 			target = 7289EAE9DA0B71781681BA800C821447 /* LXAssetManager */;
-			targetProxy = 0E5F7D933FB63938786321E4AE8D86F2 /* PBXContainerItemProxy */;
+			targetProxy = 2BBB56CCD93045200892C092BBC8A107 /* PBXContainerItemProxy */;
 		};
-		BB4586F2AE8B80B71F34ED45C49E91A7 /* PBXTargetDependency */ = {
+		8D73592BA8BA8A7F60E2476B9EF0B1B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LXAssetManager;
 			target = 7289EAE9DA0B71781681BA800C821447 /* LXAssetManager */;
-			targetProxy = B1DF8330642FB88665192DF2810DE25A /* PBXContainerItemProxy */;
+			targetProxy = 63CF72EA3B32F75ADF5CAC065EE2A053 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		598826827DCB875DD0DBC95E487F3FCA /* Debug */ = {
+		1FFD59B783AE7FAD81112ED5C8A76555 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B73A0B99792600157980EF0D820749F8 /* Pods-LXAssetManagerModule.debug.xcconfig */;
+			baseConfigurationReference = 753C68F8AB4445C5A2933C6AEE1210CA /* Pods-LXAssetManagerModule.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -526,7 +516,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-LXAssetManagerModule/Pods-LXAssetManagerModule-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -542,49 +532,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		67164C562624612F21FB506C22BAC678 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F9A08BBF9F4F47B39776AE415B932A3B /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6F7CFFB7219ED1B9F9ECE1E62C8ED37B /* Release */ = {
+		792257A5EA3CFBC2C6F90BA9F49F6425 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63C858A2B16191479D5AC5A2F191A778 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.release.xcconfig */;
 			buildSettings = {
@@ -600,7 +554,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -622,69 +576,7 @@
 			};
 			name = Release;
 		};
-		71243899B61152433AAE34EE86456EE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		75D70EEEA0A456E14F7338A7F342964E /* Debug */ = {
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -737,7 +629,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -750,9 +642,145 @@
 			};
 			name = Debug;
 		};
+		94E13DAD9B3AE3D61BAB432839395ADC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9A08BBF9F4F47B39776AE415B932A3B /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A63445E5583AF92E30FEDF4E3E7EE702 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5881C1F3CABA870A3883A2F0BFEAC6C4 /* Pods-LXAssetManagerModuleTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LXAssetManagerModuleTests/Pods-LXAssetManagerModuleTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LXAssetManagerModuleTests/Pods-LXAssetManagerModuleTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		ACBB61053433E9BFDC1281A57E2ADF5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBA2205CD63D39EAF9837B01A920DAC4 /* LXAssetManager.debug.xcconfig */;
+			baseConfigurationReference = B20F8D09CBFEE4DBD09229E7AB77C695 /* LXAssetManager.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -783,7 +811,7 @@
 			};
 			name = Debug;
 		};
-		C3875E5EF46CDEE2D0E720C552416433 /* Release */ = {
+		B51C5EB6F921D25E1F34A57AD0550869 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 913450B4446977EE38C569715A95D2B8 /* Pods-LXAssetManagerModuleTests.release.xcconfig */;
 			buildSettings = {
@@ -799,7 +827,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-LXAssetManagerModuleTests/Pods-LXAssetManagerModuleTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -821,46 +849,9 @@
 			};
 			name = Release;
 		};
-		CFCA6733EC195DA70B1072B868C868FF /* Debug */ = {
+		B7A106E74EDBFED12838ECE7BAFEC396 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5881C1F3CABA870A3883A2F0BFEAC6C4 /* Pods-LXAssetManagerModuleTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LXAssetManagerModuleTests/Pods-LXAssetManagerModuleTests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LXAssetManagerModuleTests/Pods-LXAssetManagerModuleTests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DBF4136427C3D3D971488E47E858804E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 753C68F8AB4445C5A2933C6AEE1210CA /* Pods-LXAssetManagerModule.release.xcconfig */;
+			baseConfigurationReference = B73A0B99792600157980EF0D820749F8 /* Pods-LXAssetManagerModule.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -874,7 +865,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-LXAssetManagerModule/Pods-LXAssetManagerModule-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -890,15 +881,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		EAF8DAFCE62B1FE775DEA5118C94036F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9D35E01CB6EFEA73F98D774DE754007 /* LXAssetManager.release.xcconfig */;
+			baseConfigurationReference = E2A9D00B8CBABCAB3E6D80F7EA14A146 /* LXAssetManager.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -936,8 +926,8 @@
 		2A383E2936238AC1F531ECEB0BEC57EF /* Build configuration list for PBXNativeTarget "Pods-LXAssetManagerModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				598826827DCB875DD0DBC95E487F3FCA /* Debug */,
-				DBF4136427C3D3D971488E47E858804E /* Release */,
+				B7A106E74EDBFED12838ECE7BAFEC396 /* Debug */,
+				1FFD59B783AE7FAD81112ED5C8A76555 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -945,8 +935,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75D70EEEA0A456E14F7338A7F342964E /* Debug */,
-				71243899B61152433AAE34EE86456EE7 /* Release */,
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -963,8 +953,8 @@
 		9D2D73716C7483D5E762140B77DF32D1 /* Build configuration list for PBXNativeTarget "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67164C562624612F21FB506C22BAC678 /* Debug */,
-				6F7CFFB7219ED1B9F9ECE1E62C8ED37B /* Release */,
+				94E13DAD9B3AE3D61BAB432839395ADC /* Debug */,
+				792257A5EA3CFBC2C6F90BA9F49F6425 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -972,8 +962,8 @@
 		F5587C9D55C40F958467509C0751C5F9 /* Build configuration list for PBXNativeTarget "Pods-LXAssetManagerModuleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CFCA6733EC195DA70B1072B868C868FF /* Debug */,
-				C3875E5EF46CDEE2D0E720C552416433 /* Release */,
+				A63445E5583AF92E30FEDF4E3E7EE702 /* Debug */,
+				B51C5EB6F921D25E1F34A57AD0550869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -5,7 +5,7 @@ target 'LXAssetManagerModule' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'LXAssetManager', :path => './'
-
+#pod 'LXAssetManager'
   # Pods for LXAssetManagerModule
 
   target 'LXAssetManagerModuleTests' do

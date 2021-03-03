@@ -2,15 +2,15 @@ PODS:
   - LXAssetManager (0.1.0)
 
 DEPENDENCIES:
-  - LXAssetManager (from `./`)
+  - LXAssetManager
 
-EXTERNAL SOURCES:
-  LXAssetManager:
-    :path: "./"
+SPEC REPOS:
+  trunk:
+    - LXAssetManager
 
 SPEC CHECKSUMS:
   LXAssetManager: 343f9f5f429a78b31561b8bc78f0c90cb427275d
 
-PODFILE CHECKSUM: caa64eeca4a43775f285ca464ac5cd00bbd04c19
+PODFILE CHECKSUM: 409cea6d10fa42a1079ea34748ba6ca83a251201
 
 COCOAPODS: 1.10.1
