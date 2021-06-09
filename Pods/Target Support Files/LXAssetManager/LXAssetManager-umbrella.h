@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "LXAssetCloud.h"
+#import "LXAssetCollection.h"
+#import "LXAssetManager.h"
 #import "LXAssetSave.h"
 #import "LXAuthorManager.h"
 

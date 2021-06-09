@@ -17,21 +17,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.view.backgroundColor = [UIColor redColor];
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-
-//    [LXAssetSave saveImageToassetWithImage:[UIImage imageNamed:@"rt"] assetCollectionTitle:@"xlee" success:^{
-//        NSLog(@"===图片===保存成功");
 //
-//    } fail:^(NSString * _Nonnull error) {
-//        NSLog(@"=====%@",error);
-//    }];
+    [LXAssetSave saveImageToassetWithImage:[UIImage imageNamed:@"rt"] assetCollectionTitle:PROJECT_NAME success:^{
+        NSLog(@"===图片===保存成功");
 
-    
+    } fail:^(NSString * _Nonnull error) {
+        NSLog(@"=====%@",error);
+    }];
+
+
 //    NSString * filePath = [[NSBundle mainBundle] pathForResource:@"ll" ofType:@"mp4"];
 //    NSURL *url = [NSURL fileURLWithPath:filePath];
-//    [LXAssetSave saveVideoToassetWithUrl:url assetCollectionTitle:nil success:^{
+//    [LXAssetSave saveVideoToassetWithUrl:url assetCollectionTitle:PROJECT_NAME success:^{
 //        NSLog(@"===视频===保存成功");
 //
 //    } fail:^(NSString * _Nonnull error) {
@@ -39,10 +41,10 @@
 //
 //    }];
         
-    [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto
-                                    callBack:^(BOOL isPass) {
-        NSLog(@"===========%d",isPass);
-    }];
+//    [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto
+//                                    callBack:^(BOOL isPass) {
+//        NSLog(@"===========%d",isPass);
+//    }];
     
 }
 

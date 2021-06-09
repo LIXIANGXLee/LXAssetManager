@@ -1,15 +1,24 @@
 PODS:
-  - LXAssetManager (0.2.0)
+  - LXAssetManager (2.0.0):
+    - SDWebImage
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
   - LXAssetManager (from `./`)
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   LXAssetManager:
     :path: "./"
 
 SPEC CHECKSUMS:
-  LXAssetManager: f2a509e5b4e7aabab49967a7bad6631cd7a60a9a
+  LXAssetManager: 27b40ac2ce7872538beaab8bdeb30e18f540a395
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
 PODFILE CHECKSUM: 276589168692fb21a9a668ec2fb4cac1105fb81b
 
