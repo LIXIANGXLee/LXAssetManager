@@ -2,13 +2,12 @@
 //  LXAssetSave.m
 //  LXAssetManager
 //
-//  Created by 李响 on 2021/2/23.
+//  Created by 李响 on 2020/2/23.
 //
 
 #import "LXAssetSave.h"
 #import <Photos/Photos.h>
-#import "LXAssetAuthorization.h"
-
+#import "LXAuthorManager.h"
 
 @implementation LXAssetSave
 
@@ -19,15 +18,23 @@
  * - successCallBack 成功回调
  * - failCallBack 失败回调
  */
-+ (void)saveVideoToassetWithUrl:(NSURL *)url assetCollectionTitle:(NSString *)assetCollectionTitle success:(SuccessCallBlock)successCallBack fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0)){
++ (void)saveVideoToassetWithUrl:(NSURL *)url
+           assetCollectionTitle:(NSString *)assetCollectionTitle
+                        success:(SuccessCallBlock)successCallBack
+                           fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0)){
     // 授权
     __weak __typeof(self)weakSelf = self;
-    [LXAssetAuthorization checkPhotoAuthorization:^(BOOL isPass) {
+    [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto
+                               callBack:^(BOOL isPass) {
         if (isPass) {
-            [weakSelf saveVideoToSystemWithUrl:url completionHandler:^(BOOL success, NSError *error, NSString *assetUrlLocalIdentifier) {
+            [weakSelf saveVideoToSystemWithUrl:url
+                             completionHandler:^(BOOL success, NSError *error, NSString *assetUrlLocalIdentifier) {
                 __strong __typeof(weakSelf)strongSelf = weakSelf;
                 if (success) {
-                    [strongSelf saveAssetToCustomCollectionWithCollectionTitle:assetCollectionTitle assetLocalIdentifier:assetUrlLocalIdentifier success:successCallBack fail:failCallBack];
+                    [strongSelf saveAssetToCustomCollectionWithCollectionTitle:assetCollectionTitle
+                                                          assetLocalIdentifier:assetUrlLocalIdentifier
+                                                                       success:successCallBack
+                                                                          fail:failCallBack];
                 }else{
                     dispatch_async(dispatch_get_main_queue(), ^{
                         if (failCallBack) {
@@ -47,16 +54,23 @@
  * - successCallBack 成功回调
  * - failCallBack 失败回调
  */
-+ (void)saveImageToassetWithImage:(UIImage *)image assetCollectionTitle:(NSString *)assetCollectionTitle success:(SuccessCallBlock)successCallBack fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0)){
-    
++ (void)saveImageToassetWithImage:(UIImage *)image
+             assetCollectionTitle:(NSString *)assetCollectionTitle
+                          success:(SuccessCallBlock)successCallBack
+                             fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0)){
     // 授权
     __weak __typeof(self)weakSelf = self;
-    [LXAssetAuthorization checkPhotoAuthorization:^(BOOL isPass) {
+    [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto
+                               callBack:^(BOOL isPass) {
         if (isPass){ /// 已授权
-            [weakSelf saveImageToSystemWithImage:image completionHandler:^(BOOL success, NSError *error, NSString *assetImageLocalIdentifier) {
+            [weakSelf saveImageToSystemWithImage:image
+                               completionHandler:^(BOOL success, NSError *error, NSString *assetImageLocalIdentifier) {
                 __strong __typeof(weakSelf)strongSelf = weakSelf;
                 if (success){
-                    [strongSelf saveAssetToCustomCollectionWithCollectionTitle:assetCollectionTitle assetLocalIdentifier:assetImageLocalIdentifier success:successCallBack fail:failCallBack];
+                    [strongSelf saveAssetToCustomCollectionWithCollectionTitle:assetCollectionTitle
+                                                          assetLocalIdentifier:assetImageLocalIdentifier
+                                                                       success:successCallBack
+                                                                          fail:failCallBack];
                 }else{
                     dispatch_async(dispatch_get_main_queue(), ^{
                         if (failCallBack) {
@@ -70,37 +84,38 @@
 }
 
 /// 添加资源到自定义相册
-+ (void)saveAssetToCustomCollectionWithCollectionTitle:(NSString *)assetCollectionTitle assetLocalIdentifier:(NSString *)assetLocalIdentifier success:(SuccessCallBlock)successCallBack fail:(FailCallBlock)failCallBack{
++ (void)saveAssetToCustomCollectionWithCollectionTitle:(NSString *)assetCollectionTitle
+                                  assetLocalIdentifier:(NSString *)assetLocalIdentifier
+                                               success:(SuccessCallBlock)successCallBack
+                                                  fail:(FailCallBlock)failCallBack{
     // 获得相簿
     __weak __typeof(self)weakSelf = self;
-    [self getAssetCollection:assetCollectionTitle callBack:^(PHAssetCollection * _Nullable assetCollection) {
+    [self getAssetCollection:assetCollectionTitle
+                    callBack:^(PHAssetCollection * _Nullable assetCollection) {
         if (assetCollection){
             __strong __typeof(weakSelf)strongSelf = weakSelf;
-            [strongSelf addCameraAssetToAlbum:assetLocalIdentifier assetCollection:assetCollection completionHandler:^(BOOL success, NSError *error) {
+            [strongSelf addCameraAssetToAlbum:assetLocalIdentifier
+                              assetCollection:assetCollection
+                            completionHandler:^(BOOL success, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (success) {
-                        if (successCallBack) {
-                            successCallBack();
-                        }
+                        if (successCallBack) { successCallBack(); }
                     }else {
-                        if (failCallBack) {
-                            failCallBack([error localizedFailureReason]);
-                        }
+                        if (failCallBack) { failCallBack([error localizedFailureReason]); }
                     }
                 });
             }];
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (failCallBack) {
-                    failCallBack(@"获取相册失败");
-                }
+                if (failCallBack) { failCallBack(@"获取相册失败"); }
             });
         }
     }];
 }
 
 /// 保存图片资源到系统相册
-+ (void)saveImageToSystemWithImage:(UIImage *)image completionHandler:(void(^)(BOOL success, NSError *error,NSString *assetImageLocalIdentifier))completionHandler {
++ (void)saveImageToSystemWithImage:(UIImage *)image
+                 completionHandler:(void(^)(BOOL success, NSError *error,NSString *assetImageLocalIdentifier))completionHandler {
     
     __block NSString *assetImageLocalIdentifier = nil;
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
@@ -114,7 +129,8 @@
 }
 
 /// 保存视频资源到系统相册
-+ (void)saveVideoToSystemWithUrl:(NSURL *)url completionHandler:(void(^)(BOOL success, NSError *error,NSString *assetUrlLocalIdentifier))completionHandler {
++ (void)saveVideoToSystemWithUrl:(NSURL *)url
+               completionHandler:(void(^)(BOOL success, NSError *error,NSString *assetUrlLocalIdentifier))completionHandler {
     
     __block NSString *assetUrlLocalIdentifier = nil;
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
@@ -124,12 +140,14 @@
 
         }
     } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        completionHandler(success,error,assetUrlLocalIdentifier);
+        completionHandler(success, error, assetUrlLocalIdentifier);
     }];
 }
 
 /// 添加相机资源到自定义相册
-+ (void)addCameraAssetToAlbum:(NSString *)assetLocalIdentifier assetCollection:(PHAssetCollection *)assetCollection completionHandler:(void(^)(BOOL success, NSError *error))completionHandler {
++ (void)addCameraAssetToAlbum:(NSString *)assetLocalIdentifier
+              assetCollection:(PHAssetCollection *)assetCollection
+            completionHandler:(void(^)(BOOL success, NSError *error))completionHandler {
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
         // 添加"相机胶卷"中的资源A到"相簿"D中
         //获取图片
@@ -139,12 +157,13 @@
         // 添加图片到相簿
         [request insertAssets:@[asset] atIndexes:[NSIndexSet indexSetWithIndex:0]];
     } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        completionHandler(success,error);
+        completionHandler(success, error);
     }];
 }
 
 ///获取自定义相册
-+ (void)getAssetCollection:(NSString *)assetCollectionTitle callBack:(void(^)(PHAssetCollection * __nullable assetCollection))callBack{
++ (void)getAssetCollection:(NSString *)assetCollectionTitle
+                  callBack:(void(^)(PHAssetCollection * __nullable assetCollection))callBack{
     /// 查找相册
     PHFetchResult<PHAssetCollection *> *assetCollections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     for (PHAssetCollection *assetCollection in assetCollections) {
@@ -167,6 +186,5 @@
         callBack(assetCollection);
     }
 }
-
 
 @end

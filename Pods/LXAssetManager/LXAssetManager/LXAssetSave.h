@@ -16,6 +16,7 @@ typedef void(^SuccessCallBlock)(void);
 typedef void(^FailCallBlock)(NSString *error);
 
 @interface LXAssetSave : NSObject
+
 /**将视频写入相册
  * - parameter:
  * - url 视频资源
@@ -23,7 +24,10 @@ typedef void(^FailCallBlock)(NSString *error);
  * - successCallBack 成功回调
  * - failCallBack 失败回调
  */
-+ (void)saveVideoToassetWithUrl:(NSURL *)url assetCollectionTitle:(NSString *)assetCollectionTitle success:(SuccessCallBlock)successCallBack fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0));
++ (void)saveVideoToassetWithUrl:(NSURL *)url
+           assetCollectionTitle:(NSString * __nullable)assetCollectionTitle
+                        success:(SuccessCallBlock)successCallBack
+                           fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0));
 
 
 /**将图片写入相册
@@ -33,7 +37,10 @@ typedef void(^FailCallBlock)(NSString *error);
  * - successCallBack 成功回调
  * - failCallBack 失败回调
  */
-+ (void)saveImageToassetWithImage:(UIImage *)image assetCollectionTitle:(NSString *)assetCollectionTitle success:(SuccessCallBlock __nullable)successCallBack fail:(FailCallBlock __nullable)failCallBack API_AVAILABLE(ios(9.0));
++ (void)saveImageToassetWithImage:(UIImage *)image
+             assetCollectionTitle:(NSString *)assetCollectionTitle
+                          success:(SuccessCallBlock __nullable)successCallBack
+                             fail:(FailCallBlock __nullable)failCallBack API_AVAILABLE(ios(9.0));
 
 @end
 

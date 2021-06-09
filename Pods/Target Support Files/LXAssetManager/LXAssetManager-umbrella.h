@@ -10,8 +10,8 @@
 #endif
 #endif
 
-#import "LXAssetAuthorization.h"
 #import "LXAssetSave.h"
+#import "LXAuthorManager.h"
 
 FOUNDATION_EXPORT double LXAssetManagerVersionNumber;
 FOUNDATION_EXPORT const unsigned char LXAssetManagerVersionString[];

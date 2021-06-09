@@ -7,91 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1131F8FF781DD96B353FE3FB6E7DD996 /* LXAssetAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3DD8DC6C1E6D12B9410DFF31651C20 /* LXAssetAuthorization.m */; };
-		12532D678919F54F01104A8C180C106D /* LXAssetSave.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B2DBC85674B46F52ACD2B9B1EB4AD35 /* LXAssetSave.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0794150D224D28FB0D27A1C3B6DF8563 /* LXAssetSave.h in Headers */ = {isa = PBXBuildFile; fileRef = D7FA3F93EDFCFB4A861F0F060CB1587C /* LXAssetSave.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CDC6F814325C173D6568567A45F146A /* Pods-LXAssetManagerModuleTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9D4472ADA93B4E40BE800F251890613 /* Pods-LXAssetManagerModuleTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		395DD437946886CED4396E9595162098 /* LXAssetSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D82A0F28411A4936E0390119B6FAE75 /* LXAssetSave.m */; };
 		4CBBDB9277FDC6C51D9757DD8DA33453 /* Pods-LXAssetManagerModule-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 344153F4A19B42634448A9C9437B374B /* Pods-LXAssetManagerModule-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		571C3E0FFB8A68604B075DA0FBDFEF2B /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4403D73BE26FC91F2B33BAD275FC41C5 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FD5837A7E0C62C6AAACBDEE71BF6EB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		733CF5866799614509FF77D7AEEAF5CD /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F8802CB2F37AE08743E4BA79C1F0AE /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-dummy.m */; };
+		74326DA3646525304BBFB9FE31F8EBB3 /* LXAssetManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 85C47BCB1B13AE3837A71ED38365BC7D /* LXAssetManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82614742471FA371806841877508AEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		90DB18FF72CD9CA5ECBF371E18EF0B4D /* Pods-LXAssetManagerModuleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE3038E5F3970AF4A82ACB2429377CA /* Pods-LXAssetManagerModuleTests-dummy.m */; };
+		94B29126C6018757C742B761B99F2875 /* LXAuthorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 20F9B7D12D999E151B13EC501ABC565B /* LXAuthorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		952B5E3B05277E40D12F0E89FA62E0B5 /* LXAssetManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1C3D082DDC18A8C8FD6AC5D266FCC0 /* LXAssetManager-dummy.m */; };
+		97216B15961E95CCB337F85761B4B567 /* LXAuthorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4EBCC2B56BA7283B82777B1F73893D2 /* LXAuthorManager.m */; };
 		9D1A898D7EB1ABC8CD5FCF51024648CF /* Pods-LXAssetManagerModule-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A351C24790300CC72C1317DA86231B /* Pods-LXAssetManagerModule-dummy.m */; };
 		A202A28C8FD7B6F2EE21269AC60C14BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		A9B4EF5DC1278AD842BA7B2151293733 /* LXAssetManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 67239F62C9E5C6ADB44460C76A846B0B /* LXAssetManager-dummy.m */; };
+		B54FDE716A3C094A8870F916836F2C47 /* LXAssetSave.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C99F38F05B01F68EC25F865845C97C /* LXAssetSave.m */; };
 		D797BF59C2BE234065EC5CFA2FF23445 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E34A4773E2B83B442DC91E8105DF0253 /* LXAssetAuthorization.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E4B434F48CC2CE37A819002C8FB225B /* LXAssetAuthorization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E4398B9348BED0D21CD79CD676DC6EB3 /* LXAssetManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DE41ECF84420B04C619B635168DC0AA /* LXAssetManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2BBB56CCD93045200892C092BBC8A107 /* PBXContainerItemProxy */ = {
+		0E5F7D933FB63938786321E4AE8D86F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7289EAE9DA0B71781681BA800C821447;
 			remoteInfo = LXAssetManager;
 		};
-		63CF72EA3B32F75ADF5CAC065EE2A053 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7289EAE9DA0B71781681BA800C821447;
-			remoteInfo = LXAssetManager;
-		};
-		E69B72A71EC27C2B92C438996FB1F55A /* PBXContainerItemProxy */ = {
+		6981221922C0225BABFFECDF482349CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CBF5FBB3D1E7779C1B34221290A26415;
 			remoteInfo = "Pods-LXAssetManagerModule";
 		};
+		B1DF8330642FB88665192DF2810DE25A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7289EAE9DA0B71781681BA800C821447;
+			remoteInfo = LXAssetManager;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B3DD8DC6C1E6D12B9410DFF31651C20 /* LXAssetAuthorization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXAssetAuthorization.m; path = LXAssetManager/LXAssetAuthorization.m; sourceTree = "<group>"; };
 		0F65C3E2EE4891CD98E98F2DDCBC4CDB /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1054B35951DCCEB88030A8F8B4B4FA51 /* Pods_LXAssetManagerModuleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXAssetManagerModuleTests.framework; path = "Pods-LXAssetManagerModuleTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E4B434F48CC2CE37A819002C8FB225B /* LXAssetAuthorization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXAssetAuthorization.h; path = LXAssetManager/LXAssetAuthorization.h; sourceTree = "<group>"; };
-		1E5E08E50F0D39023051737291BFF11F /* LXAssetManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXAssetManager.modulemap; sourceTree = "<group>"; };
+		1E1C3D082DDC18A8C8FD6AC5D266FCC0 /* LXAssetManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXAssetManager-dummy.m"; sourceTree = "<group>"; };
+		20F9B7D12D999E151B13EC501ABC565B /* LXAuthorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXAuthorManager.h; path = LXAssetManager/LXAuthorManager.h; sourceTree = "<group>"; };
 		267C4DC1C63877CF419F8644356885EC /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.modulemap"; sourceTree = "<group>"; };
 		30BB0E20842EA8B5281452EC8203BE8A /* Pods-LXAssetManagerModuleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LXAssetManagerModuleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		316730710355FAB66DE38DAAFBA69C7A /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-frameworks.sh"; sourceTree = "<group>"; };
 		344153F4A19B42634448A9C9437B374B /* Pods-LXAssetManagerModule-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXAssetManagerModule-umbrella.h"; sourceTree = "<group>"; };
 		3CA04B93C96AAE3916CC0D2A07152948 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		3D82A0F28411A4936E0390119B6FAE75 /* LXAssetSave.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXAssetSave.m; path = LXAssetManager/LXAssetSave.m; sourceTree = "<group>"; };
 		4403D73BE26FC91F2B33BAD275FC41C5 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-umbrella.h"; sourceTree = "<group>"; };
 		4E537F7E9A2809B29DB995DC0530447B /* Pods-LXAssetManagerModule-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModule-acknowledgements.plist"; sourceTree = "<group>"; };
 		5881C1F3CABA870A3883A2F0BFEAC6C4 /* Pods-LXAssetManagerModuleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModuleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		610AA2D8D6C0E203600E9B9897D7C7FC /* Pods-LXAssetManagerModuleTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModuleTests-Info.plist"; sourceTree = "<group>"; };
+		621AB873FF702308E378DB86DA25C2FA /* LXAssetManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXAssetManager.release.xcconfig; sourceTree = "<group>"; };
 		63C858A2B16191479D5AC5A2F191A778 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.release.xcconfig"; sourceTree = "<group>"; };
-		67239F62C9E5C6ADB44460C76A846B0B /* LXAssetManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LXAssetManager-dummy.m"; sourceTree = "<group>"; };
-		6C1FA08801EEBBD61CFD57401FB70EEC /* LXAssetManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXAssetManager-Info.plist"; sourceTree = "<group>"; };
+		6CF9806C2FB46551D9EFD0349F80A5AF /* LXAssetManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LXAssetManager-Info.plist"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		753C68F8AB4445C5A2933C6AEE1210CA /* Pods-LXAssetManagerModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModule.release.xcconfig"; sourceTree = "<group>"; };
 		7CEEB71463349097EF582CDA85AB17A0 /* Pods-LXAssetManagerModule-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModule-Info.plist"; sourceTree = "<group>"; };
-		8B2DBC85674B46F52ACD2B9B1EB4AD35 /* LXAssetSave.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXAssetSave.h; path = LXAssetManager/LXAssetSave.h; sourceTree = "<group>"; };
-		8DE41ECF84420B04C619B635168DC0AA /* LXAssetManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXAssetManager-umbrella.h"; sourceTree = "<group>"; };
+		7F54D4B1C4DEB66AEC7C655F71C32D06 /* LXAssetManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXAssetManager.debug.xcconfig; sourceTree = "<group>"; };
+		85C47BCB1B13AE3837A71ED38365BC7D /* LXAssetManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXAssetManager-umbrella.h"; sourceTree = "<group>"; };
+		904B0D42A0B248E352A41482E072225F /* LXAssetManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXAssetManager-prefix.pch"; sourceTree = "<group>"; };
 		913450B4446977EE38C569715A95D2B8 /* Pods-LXAssetManagerModuleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModuleTests.release.xcconfig"; sourceTree = "<group>"; };
 		9CCD925C7284E8E0E57A06A105BDEAE3 /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A103DD96518CEF1222ECB17741922E36 /* Pods_LXAssetManagerModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXAssetManagerModule.framework; path = "Pods-LXAssetManagerModule.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B20F8D09CBFEE4DBD09229E7AB77C695 /* LXAssetManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXAssetManager.debug.xcconfig; sourceTree = "<group>"; };
+		B153832EBAD79985900E6EB792EC46E4 /* LXAssetManager.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LXAssetManager.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B73A0B99792600157980EF0D820749F8 /* Pods-LXAssetManagerModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModule.debug.xcconfig"; sourceTree = "<group>"; };
 		BFDE60C87F132A812550761CA48EF9E3 /* Pods_LXAssetManagerModule_LXAssetManagerModuleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LXAssetManagerModule_LXAssetManagerModuleUITests.framework; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFEF3D1FE1765114C9B10E8F0CBAE718 /* LXAssetManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LXAssetManager-prefix.pch"; sourceTree = "<group>"; };
+		C4EBCC2B56BA7283B82777B1F73893D2 /* LXAuthorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXAuthorManager.m; path = LXAssetManager/LXAuthorManager.m; sourceTree = "<group>"; };
 		C82D07CADAFADB7846FA39B782DEF5DE /* Pods-LXAssetManagerModule.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXAssetManagerModule.modulemap"; sourceTree = "<group>"; };
 		CCB832BE7DFC865F596D6E0F5EC15D6D /* LXAssetManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LXAssetManager.framework; path = LXAssetManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A351C24790300CC72C1317DA86231B /* Pods-LXAssetManagerModule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXAssetManagerModule-dummy.m"; sourceTree = "<group>"; };
 		D55606D744EB78FE682A1DFEE1D199AF /* Pods-LXAssetManagerModuleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LXAssetManagerModuleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		D72AE0E656827732C28290899AC6AD0A /* Pods-LXAssetManagerModule-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LXAssetManagerModule-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D7FA3F93EDFCFB4A861F0F060CB1587C /* LXAssetSave.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LXAssetSave.h; path = LXAssetManager/LXAssetSave.h; sourceTree = "<group>"; };
 		D9D4472ADA93B4E40BE800F251890613 /* Pods-LXAssetManagerModuleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LXAssetManagerModuleTests-umbrella.h"; sourceTree = "<group>"; };
 		E2103E64B1FDD8D157DDF763CE2CC878 /* Pods-LXAssetManagerModule-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LXAssetManagerModule-frameworks.sh"; sourceTree = "<group>"; };
-		E2A9D00B8CBABCAB3E6D80F7EA14A146 /* LXAssetManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LXAssetManager.release.xcconfig; sourceTree = "<group>"; };
 		E3F8802CB2F37AE08743E4BA79C1F0AE /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests-dummy.m"; sourceTree = "<group>"; };
+		E5FC9376319A53B3BDC04D8DC0BD6707 /* LXAssetManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LXAssetManager.modulemap; sourceTree = "<group>"; };
 		EBE3038E5F3970AF4A82ACB2429377CA /* Pods-LXAssetManagerModuleTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LXAssetManagerModuleTests-dummy.m"; sourceTree = "<group>"; };
 		F0ACEE91FAE9D8E019910219543B61A3 /* Pods-LXAssetManagerModuleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LXAssetManagerModuleTests.modulemap"; sourceTree = "<group>"; };
+		F5C99F38F05B01F68EC25F865845C97C /* LXAssetSave.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LXAssetSave.m; path = LXAssetManager/LXAssetSave.m; sourceTree = "<group>"; };
 		F9A08BBF9F4F47B39776AE415B932A3B /* Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,12 +132,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		087ABD8959D3AA91B189DDE14EB0BF19 /* Pods */ = {
+		0362D1D7708644F1C1668E4FFBEEFFD3 /* LXAssetManager */ = {
 			isa = PBXGroup;
 			children = (
-				6A9791AE9341EB27D8047FA4999BF854 /* LXAssetManager */,
+				D7FA3F93EDFCFB4A861F0F060CB1587C /* LXAssetSave.h */,
+				F5C99F38F05B01F68EC25F865845C97C /* LXAssetSave.m */,
+				20F9B7D12D999E151B13EC501ABC565B /* LXAuthorManager.h */,
+				C4EBCC2B56BA7283B82777B1F73893D2 /* LXAuthorManager.m */,
+				C35C8D80CD2E4A18868E78DDE8876C24 /* Pod */,
+				94143596153DE08F59A277D4DFC694BD /* Support Files */,
 			);
-			name = Pods;
+			name = LXAssetManager;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		331E83959C73EE0C79141C643B352AB6 /* Pods-LXAssetManagerModule */ = {
@@ -180,32 +187,27 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6A9791AE9341EB27D8047FA4999BF854 /* LXAssetManager */ = {
+		9268753C00EE0D4FE5BDE7EF47D94C3B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E4B434F48CC2CE37A819002C8FB225B /* LXAssetAuthorization.h */,
-				0B3DD8DC6C1E6D12B9410DFF31651C20 /* LXAssetAuthorization.m */,
-				8B2DBC85674B46F52ACD2B9B1EB4AD35 /* LXAssetSave.h */,
-				3D82A0F28411A4936E0390119B6FAE75 /* LXAssetSave.m */,
-				909A0A43F97B1C62790EB4374335FF80 /* Support Files */,
+				0362D1D7708644F1C1668E4FFBEEFFD3 /* LXAssetManager */,
 			);
-			name = LXAssetManager;
-			path = LXAssetManager;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		909A0A43F97B1C62790EB4374335FF80 /* Support Files */ = {
+		94143596153DE08F59A277D4DFC694BD /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1E5E08E50F0D39023051737291BFF11F /* LXAssetManager.modulemap */,
-				67239F62C9E5C6ADB44460C76A846B0B /* LXAssetManager-dummy.m */,
-				6C1FA08801EEBBD61CFD57401FB70EEC /* LXAssetManager-Info.plist */,
-				BFEF3D1FE1765114C9B10E8F0CBAE718 /* LXAssetManager-prefix.pch */,
-				8DE41ECF84420B04C619B635168DC0AA /* LXAssetManager-umbrella.h */,
-				B20F8D09CBFEE4DBD09229E7AB77C695 /* LXAssetManager.debug.xcconfig */,
-				E2A9D00B8CBABCAB3E6D80F7EA14A146 /* LXAssetManager.release.xcconfig */,
+				E5FC9376319A53B3BDC04D8DC0BD6707 /* LXAssetManager.modulemap */,
+				1E1C3D082DDC18A8C8FD6AC5D266FCC0 /* LXAssetManager-dummy.m */,
+				6CF9806C2FB46551D9EFD0349F80A5AF /* LXAssetManager-Info.plist */,
+				904B0D42A0B248E352A41482E072225F /* LXAssetManager-prefix.pch */,
+				85C47BCB1B13AE3837A71ED38365BC7D /* LXAssetManager-umbrella.h */,
+				7F54D4B1C4DEB66AEC7C655F71C32D06 /* LXAssetManager.debug.xcconfig */,
+				621AB873FF702308E378DB86DA25C2FA /* LXAssetManager.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/LXAssetManager";
+			path = "Pods/Target Support Files/LXAssetManager";
 			sourceTree = "<group>";
 		};
 		A0BA4B143C4501DCE5F7C0F380896CB5 /* Products */ = {
@@ -236,12 +238,20 @@
 			path = "Target Support Files/Pods-LXAssetManagerModule-LXAssetManagerModuleUITests";
 			sourceTree = "<group>";
 		};
+		C35C8D80CD2E4A18868E78DDE8876C24 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B153832EBAD79985900E6EB792EC46E4 /* LXAssetManager.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				9268753C00EE0D4FE5BDE7EF47D94C3B /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				087ABD8959D3AA91B189DDE14EB0BF19 /* Pods */,
 				A0BA4B143C4501DCE5F7C0F380896CB5 /* Products */,
 				F573423BAEE27F8A005E324F9F6FCE50 /* Targets Support Files */,
 			);
@@ -284,13 +294,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C6575FFF92D0F81AD53FB227372FC7BB /* Headers */ = {
+		75A6D4F15322D90E864A9D090C7E4403 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E34A4773E2B83B442DC91E8105DF0253 /* LXAssetAuthorization.h in Headers */,
-				E4398B9348BED0D21CD79CD676DC6EB3 /* LXAssetManager-umbrella.h in Headers */,
-				12532D678919F54F01104A8C180C106D /* LXAssetSave.h in Headers */,
+				74326DA3646525304BBFB9FE31F8EBB3 /* LXAssetManager-umbrella.h in Headers */,
+				0794150D224D28FB0D27A1C3B6DF8563 /* LXAssetSave.h in Headers */,
+				94B29126C6018757C742B761B99F2875 /* LXAuthorManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +327,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				38BFC29AE29968A5C4DC7CF63701B7FC /* PBXTargetDependency */,
+				BB4586F2AE8B80B71F34ED45C49E91A7 /* PBXTargetDependency */,
 			);
 			name = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests";
 			productName = "Pods-LXAssetManagerModule-LXAssetManagerModuleUITests";
@@ -328,8 +338,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 65F8FA2F757B8D94AE71CF4557F3CC5E /* Build configuration list for PBXNativeTarget "LXAssetManager" */;
 			buildPhases = (
-				C6575FFF92D0F81AD53FB227372FC7BB /* Headers */,
-				A6DB85413BF26962EEBA2045E5D891EF /* Sources */,
+				75A6D4F15322D90E864A9D090C7E4403 /* Headers */,
+				5571E388F97B346248C2F07546A9D428 /* Sources */,
 				236AF79BD1BD95AC6564441949F76B13 /* Frameworks */,
 				058EDAD9136E0FE866344450662A06B6 /* Resources */,
 			);
@@ -354,7 +364,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				328C2430BE50B8E6DDFADCEED1A59485 /* PBXTargetDependency */,
+				5EF62E7AE26EB004238BD543391B3892 /* PBXTargetDependency */,
 			);
 			name = "Pods-LXAssetManagerModuleTests";
 			productName = "Pods-LXAssetManagerModuleTests";
@@ -373,7 +383,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				8D73592BA8BA8A7F60E2476B9EF0B1B9 /* PBXTargetDependency */,
+				930CF71ECF7681A09D411A85387F557D /* PBXTargetDependency */,
 			);
 			name = "Pods-LXAssetManagerModule";
 			productName = "Pods-LXAssetManagerModule";
@@ -442,6 +452,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5571E388F97B346248C2F07546A9D428 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				952B5E3B05277E40D12F0E89FA62E0B5 /* LXAssetManager-dummy.m in Sources */,
+				B54FDE716A3C094A8870F916836F2C47 /* LXAssetSave.m in Sources */,
+				97216B15961E95CCB337F85761B4B567 /* LXAuthorManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8A324AB6011018A3CBEC428D27C84D60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,16 +478,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6DB85413BF26962EEBA2045E5D891EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1131F8FF781DD96B353FE3FB6E7DD996 /* LXAssetAuthorization.m in Sources */,
-				A9B4EF5DC1278AD842BA7B2151293733 /* LXAssetManager-dummy.m in Sources */,
-				395DD437946886CED4396E9595162098 /* LXAssetSave.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B2E031E874DA360C554B8A1227F88B31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,23 +489,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		328C2430BE50B8E6DDFADCEED1A59485 /* PBXTargetDependency */ = {
+		5EF62E7AE26EB004238BD543391B3892 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-LXAssetManagerModule";
 			target = CBF5FBB3D1E7779C1B34221290A26415 /* Pods-LXAssetManagerModule */;
-			targetProxy = E69B72A71EC27C2B92C438996FB1F55A /* PBXContainerItemProxy */;
+			targetProxy = 6981221922C0225BABFFECDF482349CC /* PBXContainerItemProxy */;
 		};
-		38BFC29AE29968A5C4DC7CF63701B7FC /* PBXTargetDependency */ = {
+		930CF71ECF7681A09D411A85387F557D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LXAssetManager;
 			target = 7289EAE9DA0B71781681BA800C821447 /* LXAssetManager */;
-			targetProxy = 2BBB56CCD93045200892C092BBC8A107 /* PBXContainerItemProxy */;
+			targetProxy = 0E5F7D933FB63938786321E4AE8D86F2 /* PBXContainerItemProxy */;
 		};
-		8D73592BA8BA8A7F60E2476B9EF0B1B9 /* PBXTargetDependency */ = {
+		BB4586F2AE8B80B71F34ED45C49E91A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LXAssetManager;
 			target = 7289EAE9DA0B71781681BA800C821447 /* LXAssetManager */;
-			targetProxy = 63CF72EA3B32F75ADF5CAC065EE2A053 /* PBXContainerItemProxy */;
+			targetProxy = B1DF8330642FB88665192DF2810DE25A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -780,7 +790,7 @@
 		};
 		ACBB61053433E9BFDC1281A57E2ADF5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B20F8D09CBFEE4DBD09229E7AB77C695 /* LXAssetManager.debug.xcconfig */;
+			baseConfigurationReference = 7F54D4B1C4DEB66AEC7C655F71C32D06 /* LXAssetManager.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -888,7 +898,7 @@
 		};
 		EAF8DAFCE62B1FE775DEA5118C94036F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2A9D00B8CBABCAB3E6D80F7EA14A146 /* LXAssetManager.release.xcconfig */;
+			baseConfigurationReference = 621AB873FF702308E378DB86DA25C2FA /* LXAssetManager.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
