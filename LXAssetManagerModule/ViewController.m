@@ -38,8 +38,8 @@
 //        NSLog(@"=====%@",error);
 //
 //    }];
-    
-    [LXAssetAuthorization checkAuthorization:LXAuthorizationTypePhoto
+        
+    [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto
                                     callBack:^(BOOL isPass) {
         NSLog(@"===========%d",isPass);
     }];
