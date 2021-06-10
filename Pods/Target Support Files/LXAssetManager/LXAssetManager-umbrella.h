@@ -12,6 +12,7 @@
 
 #import "LXAssetCloud.h"
 #import "LXAssetCollection.h"
+#import "LXAssetItem.h"
 #import "LXAssetManager.h"
 #import "LXAssetSave.h"
 #import "LXAuthorManager.h"
