@@ -9,9 +9,9 @@
 #import <SDWebImage/SDWebImage.h>
 #import "LXAssetCache.h"
 #import "LXAssetManager.h"
+#import "LXAssetDefine.h"
 
-#define SCREEN_WDITH [[UIScreen mainScreen] bounds].size.width
-#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_WDITH_A [[UIScreen mainScreen] bounds].size.width
 
 @interface LXAssetItem()
 
@@ -37,11 +37,19 @@
     return self;
 }
 
+- (BOOL)isVideo {
+    return self.phasset.mediaType == PHAssetMediaTypeVideo;
+}
+- (BOOL)isImage {
+    return self.phasset.mediaType == PHAssetMediaTypeImage;
+}
+
+-(void)fetchImageWithThumbnail:(void (^)(UIImage * _Nullable))completionHandler {
+    [self fetchImage:LXAssetImageTypeThumbnail handler:completionHandler];
+}
+
 - (void)fetchImage:(LXAssetImageType)type handler:(void (^)(UIImage * _Nullable))completionHandler {
-    
-    @LXWeakObj(self);
-    [[LXAssetManager shared].assetThread executeTask:^{
-    @LXStrongObj(self);
+    ASYNC_THREAD(
      CGSize size = CGSizeZero;
      switch (type) {
          case LXAssetImageTypeThumbnail:{
@@ -54,18 +62,18 @@
                  });
                  return;
              }
-             size = CGSizeMake(SCREEN_WDITH/4, SCREEN_WDITH/4);
+             size = CGSizeMake(SCREEN_WDITH_A/4, SCREEN_WDITH_A/4);
            }
              break;
          case LXAssetImageTypeMiddle:
-             size = CGSizeMake(SCREEN_WDITH/2, SCREEN_WDITH/2);
+             size = CGSizeMake(SCREEN_WDITH_A/2, SCREEN_WDITH_A/2);
              break;
          case LXAssetImageTypeOrigin:
              size = PHImageManagerMaximumSize;
              break;
          default:
              break;
-     }
+       }
 
         PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
         option.synchronous = YES;
@@ -86,13 +94,11 @@
                 }
             }
         }];
-    }];
+   )
  }
 
  - (BOOL)checkAssetInCloud {
-     if (self.phasset == nil ||
-         (self.phasset.mediaType != PHAssetMediaTypeVideo &&
-         self.phasset.mediaType != PHAssetMediaTypeImage)) {
+     if (self.phasset == nil || (![self isVideo] && ![self isImage])) {
          //只检查了图片和视频资源是否在云上
          return NO;
      }
@@ -103,7 +109,7 @@
      __block BOOL isInICloud = NO;
      dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
      @autoreleasepool {
-         if (self.phasset.mediaType == PHAssetMediaTypeVideo) {
+         if ([self isVideo]) {
              PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
              options.version = PHVideoRequestOptionsVersionOriginal;
              options.deliveryMode = PHVideoRequestOptionsDeliveryModeHighQualityFormat;
@@ -117,7 +123,7 @@
                  }
                  dispatch_semaphore_signal(semaphore);
              }];
-         } else if (self.phasset.mediaType == PHAssetMediaTypeImage) {
+         } else if ([self isImage]) {
              PHImageRequestOptions *options = [PHImageRequestOptions new];
              options.version = PHImageRequestOptionsVersionOriginal;
              options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
@@ -146,16 +152,16 @@
      self.completionHandler = completionHandler;
      self.status = LXAssetCloudStatusDownloading;
      
-     if (self.phasset.mediaType == PHAssetMediaTypeImage) {
+     if ([self isImage]) {
          [self requestImageFromCloud];
-     } else if (self.phasset.mediaType == PHAssetMediaTypeVideo) {
+     } else if ([self isVideo]) {
          [self requestVideoFromCloud];
      }
  }
 
  /// 从云上获取图片
  - (void)requestImageFromCloud {
-     __weak typeof(self) weakSelf = self;
+     @LXWeakObj(self)
      PHImageRequestOptions *options = [PHImageRequestOptions new];
      options.resizeMode = PHImageRequestOptionsResizeModeFast;
      options.version = PHImageRequestOptionsVersionOriginal;
@@ -165,9 +171,10 @@
                                  NSError *__nullable error,
                                  BOOL *stop,
                                  NSDictionary *__nullable info) {
+         @LXStrongObj(self)
          dispatch_async(dispatch_get_main_queue(), ^{
-             if (weakSelf.progressHandler) {
-                 weakSelf.progressHandler(progress);
+             if (self.progressHandler) {
+                 self.progressHandler(progress);
              }
          });
      };
@@ -179,20 +186,21 @@
                                                       NSString * _Nullable dataUTI,
                                                       UIImageOrientation orientation,
                                                       NSDictionary * _Nullable info) {
+         @LXStrongObj(self)
          dispatch_async(dispatch_get_main_queue(), ^{
              if (imageData) {
-                 weakSelf.status = LXAssetCloudStatusDownloadedSucc;
-                 if (weakSelf.completionHandler) {
-                     weakSelf.completionHandler(weakSelf);
+                 self.status = LXAssetCloudStatusDownloadedSucc;
+                 if (self.completionHandler) {
+                     self.completionHandler(self);
                  }
              } else {
                  if ([info[PHImageCancelledKey] boolValue]) {//如果不是取消
-                     weakSelf.status = LXAssetCloudStatusDownloadedCancel;
+                     self.status = LXAssetCloudStatusDownloadedCancel;
                  }else{
-                     weakSelf.status = LXAssetCloudStatusDownloadedFail;
+                     self.status = LXAssetCloudStatusDownloadedFail;
                  }
-                 if (weakSelf.completionHandler) {
-                     weakSelf.completionHandler(nil);
+                 if (self.completionHandler) {
+                     self.completionHandler(nil);
                  }
              }
          });

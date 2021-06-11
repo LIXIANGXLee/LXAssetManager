@@ -1,6 +1,6 @@
 //
-//  LXObjcThreadActive.h
-//  LXSwiftFoundation
+//  LXAssetThread.h
+//  LXAssetManager
 //
 //  Created by Mac on 2020/9/26.
 //  Copyright © 2020 李响. All rights reserved.

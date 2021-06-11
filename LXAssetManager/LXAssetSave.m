@@ -8,6 +8,7 @@
 #import "LXAssetSave.h"
 #import <Photos/Photos.h>
 #import "LXAuthorManager.h"
+#import "LXAssetDefine.h"
 
 @implementation LXAssetSave
 
@@ -23,18 +24,18 @@
                         success:(SuccessCallBlock)successCallBack
                            fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0)){
     // 授权
-    __weak __typeof(self)weakSelf = self;
+    @LXWeakObj(self)
     [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto
                                callBack:^(BOOL isPass) {
         if (isPass) {
-            [weakSelf saveVideoToSystemWithUrl:url
+            [self saveVideoToSystemWithUrl:url
                              completionHandler:^(BOOL success, NSError *error, NSString *assetUrlLocalIdentifier) {
-                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                @LXStrongObj(self)
                 if (success) {
-                    [strongSelf saveAssetToCustomCollectionWithCollectionTitle:assetCollectionTitle
-                                                          assetLocalIdentifier:assetUrlLocalIdentifier
-                                                                       success:successCallBack
-                                                                          fail:failCallBack];
+                    [self saveAssetToCustomCollection:assetCollectionTitle
+                                       assetLocalIdentifier:assetUrlLocalIdentifier
+                                                    success:successCallBack
+                                                       fail:failCallBack];
                 }else{
                     dispatch_async(dispatch_get_main_queue(), ^{
                         if (failCallBack) {
@@ -59,18 +60,18 @@
                           success:(SuccessCallBlock)successCallBack
                              fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0)){
     // 授权
-    __weak __typeof(self)weakSelf = self;
+    @LXWeakObj(self)
     [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto
                                callBack:^(BOOL isPass) {
         if (isPass){ /// 已授权
-            [weakSelf saveImageToSystemWithImage:image
+            [self saveImageToSystemWithImage:image
                                completionHandler:^(BOOL success, NSError *error, NSString *assetImageLocalIdentifier) {
-                __strong __typeof(weakSelf)strongSelf = weakSelf;
+                @LXStrongObj(self)
                 if (success){
-                    [strongSelf saveAssetToCustomCollectionWithCollectionTitle:assetCollectionTitle
-                                                          assetLocalIdentifier:assetImageLocalIdentifier
-                                                                       success:successCallBack
-                                                                          fail:failCallBack];
+                    [self saveAssetToCustomCollection:assetCollectionTitle
+                                       assetLocalIdentifier:assetImageLocalIdentifier
+                                                    success:successCallBack
+                                                       fail:failCallBack];
                 }else{
                     dispatch_async(dispatch_get_main_queue(), ^{
                         if (failCallBack) {
@@ -84,17 +85,17 @@
 }
 
 /// 添加资源到自定义相册
-+ (void)saveAssetToCustomCollectionWithCollectionTitle:(NSString *)assetCollectionTitle
-                                  assetLocalIdentifier:(NSString *)assetLocalIdentifier
-                                               success:(SuccessCallBlock)successCallBack
-                                                  fail:(FailCallBlock)failCallBack{
++ (void)saveAssetToCustomCollection:(NSString *)assetCollectionTitle
+               assetLocalIdentifier:(NSString *)assetLocalIdentifier
+                            success:(SuccessCallBlock)successCallBack
+                               fail:(FailCallBlock)failCallBack{
     // 获得相簿
-    __weak __typeof(self)weakSelf = self;
+    @LXWeakObj(self)
     [self getAssetCollection:assetCollectionTitle
                     callBack:^(PHAssetCollection * _Nullable assetCollection) {
+        @LXStrongObj(self)
         if (assetCollection){
-            __strong __typeof(weakSelf)strongSelf = weakSelf;
-            [strongSelf addCameraAssetToAlbum:assetLocalIdentifier
+            [self addCameraAssetToAlbum:assetLocalIdentifier
                               assetCollection:assetCollection
                             completionHandler:^(BOOL success, NSError *error) {
                 dispatch_async(dispatch_get_main_queue(), ^{

@@ -51,13 +51,23 @@ typedef void (^FetchCloudCompletionHandler)(LXAssetItem * __nullable assetItem);
 - (void)fetchImage:(LXAssetImageType)type
            handler:(void(^)(UIImage * _Nullable image))completionHandler;
 
+/// 获取缩略图
+- (void)fetchImageWithThumbnail:(void(^)(UIImage * _Nullable image))completionHandler;
+
+/// 判断资源是否为视频
+- (BOOL)isVideo;
+
+/// 判断资源是否为图片
+- (BOOL)isImage;
+
 /// 同步检查资源是否在云上
 - (BOOL)checkAssetInCloud;
 
 /// 获取云cloud asset资源
 /// @param progressHandler 进度回调
 /// @param completionHandler 完成回调
-- (void)requestCloudData:(FetchCloudProgressHandler)progressHandler completion:(FetchCloudCompletionHandler)completionHandler;
+- (void)requestCloudData:(FetchCloudProgressHandler)progressHandler
+              completion:(FetchCloudCompletionHandler)completionHandler;
 
 /// 取消云下载任务
 - (void)cancelRequestDataFromCloud;

@@ -1,6 +1,6 @@
 //
-//  LXObjcThreadActive.m
-//  LXSwiftFoundation
+//  LXAssetThread.m
+//  LXAssetManager
 //
 //  Created by Mac on 2020/9/26.
 //  Copyright © 2020 李响. All rights reserved.
@@ -32,12 +32,12 @@
         if (@available(iOS 10.0, *)) {
             __weak typeof(self)weakSelf = self;
             self.innerThread = [[NSThread alloc] initWithBlock:^{
-                [weakSelf __saveThread];
+                [weakSelf _saveThread];
             }];
         } else {
             LXAssetProxy *proxy = [LXAssetProxy proxyWithTarget:self];
             self.innerThread = [[NSThread alloc]initWithTarget:proxy
-                                                      selector:@selector(__saveThread)
+                                                      selector:@selector(_saveThread)
                                                         object:nil];
         }
         [self start];
@@ -57,7 +57,7 @@
 - (void)executeTask:(LXAssetThreadTask)task {
     if (!self.innerThread || !task) return;
     
-    [self performSelector:@selector(__executeTask:)
+    [self performSelector:@selector(_executeTask:)
                  onThread:self.innerThread
                withObject:task
             waitUntilDone:NO];
@@ -66,7 +66,7 @@
 - (void)stop{
     if (!self.innerThread) return;
     
-    [self performSelector:@selector(__stop)
+    [self performSelector:@selector(_stop)
                  onThread:self.innerThread
                withObject:nil
             waitUntilDone:YES];
@@ -78,7 +78,7 @@
 }
 
 #pragma mark - private methods
--(void)__saveThread{
+-(void)_saveThread{
 
     CFRunLoopSourceContext context = {0};
     CFRunLoopSourceRef source = CFRunLoopSourceCreate(kCFAllocatorDefault,
@@ -90,13 +90,13 @@
                        1.0e10, false);
 }
 
-- (void)__stop{
+- (void)_stop{
     CFRunLoopStop(CFRunLoopGetCurrent());
     self.innerThread = nil;
     self.isStart = false;
 }
 
-- (void)__executeTask:(LXAssetThreadTask)task{
+- (void)_executeTask:(LXAssetThreadTask)task{
     task();
 }
 

@@ -8,10 +8,12 @@
 #import "LXAssetManager.h"
 #import "LXAssetCollection.h"
 #import "LXAssetCache.h"
+#import "LXAuthorManager.h"
+#import "LXAssetDefine.h"
 
 @interface LXAssetManager()
 @property (nonatomic, strong)NSMutableArray<LXAssetCollection *> *assetCollections;
-@property(nonatomic, strong)NSArray *types;
+@property (nonatomic, strong)NSArray *types;
 @end
 
 @implementation LXAssetManager
@@ -37,69 +39,67 @@
 }
 
 - (void)fetchAllAssetCollections:(void (^)(NSArray<LXAssetCollection *> * _Nonnull))completionHandler {
-    
-    @LXWeakObj(self);
-    [self.assetThread executeTask:^{
-    @LXStrongObj(self);
-      dispatch_async(dispatch_get_main_queue(), ^{
-            if (completionHandler) {
-                completionHandler(self.assetCollections);
-            }
-        });
-    }];
+    ASYNC_THREAD(
+     dispatch_async(dispatch_get_main_queue(), ^{
+           if (completionHandler) {
+               completionHandler(self.assetCollections);
+           }
+      });
+    )
 }
 
 - (void)reloadAllAssetCollections:(NSArray<NSNumber *> *)types{
     if (!types || types.count == 0) {
         types = self.types;
     }
-    @LXWeakObj(self);
-    [self.assetThread executeTask:^{
-    @LXStrongObj(self);
-        [self.assetCollections removeAllObjects];
-        [types enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj,
-                                            NSUInteger idx,
-                                            BOOL * _Nonnull stop) {
-            if ([self.types containsObject:obj]) {
-                [self fetchCollectionWithType:obj.integerValue];
-            }
-        }];
+    
+    [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto
+                               callBack:^(BOOL isPass) {
+        if (isPass) {
+            ASYNC_THREAD(
+             [self.assetCollections removeAllObjects];
+             [types enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj,
+                                                 NSUInteger idx,
+                                                 BOOL * _Nonnull stop) {
+                 if ([self.types containsObject:obj]) {
+                     [self fetchCollectionWithType:obj.integerValue];
+                 }
+             }];
+            )
+        }
     }];
 }
 
 - (void)clearAllCollections {
-    @LXWeakObj(self);
-    [self.assetThread executeTask:^{
-    @LXStrongObj(self);
-        [self.assetCollections removeAllObjects];
-        [[LXAssetCache shared].memoryCache removeAllObjects];
-    }];
+    ASYNC_THREAD(
+     [self.assetCollections removeAllObjects];
+     [[LXAssetCache shared].memoryCache removeAllObjects];
+     )
 }
 
 /// 获取系统相册
 -(NSArray<LXAssetCollection *> *)fetchCollectionWithType:(PHAssetCollectionType)type {
-    
     PHFetchResult<PHAssetCollection *> *collections;
     collections = [PHAssetCollection fetchAssetCollectionsWithType:type
                                                            subtype:PHAssetCollectionSubtypeAny
                                                            options:nil];
-    __weak typeof(self)weakSelf = self;
+    @LXWeakObj(self);
     [collections enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull collection,
                                               NSUInteger idx, BOOL * _Nonnull stop) {
-        __strong typeof(weakSelf)strongSelf = weakSelf;
-        LXAssetCollection *assetCollection = [strongSelf creatAssetCollectionFrom:collection];
+        @LXStrongObj(self);
+        LXAssetCollection *assetCollection = [self creatAssetCollectionFrom:collection];
         if (assetCollection && assetCollection.firstAssetItem) {
             if (collection.assetCollectionType == PHAssetCollectionTypeAlbum &&
                 collection.assetCollectionSubtype == PHAssetCollectionSubtypeAlbumRegular) {
                 assetCollection.title = collection.localizedTitle;
-                [strongSelf.assetCollections addObject:assetCollection];
+                [self.assetCollections addObject:assetCollection];
             }else{
                 assetCollection.title = [self transformAblumTitle:collection.localizedTitle];
                 if (collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumUserLibrary ||
                     collection.assetCollectionSubtype == PHAssetCollectionSubtypeSmartAlbumRecentlyAdded) {
-                    [weakSelf.assetCollections insertObject:assetCollection atIndex:0];
+                    [self.assetCollections insertObject:assetCollection atIndex:0];
                 }else{
-                    [strongSelf.assetCollections addObject:assetCollection];
+                    [self.assetCollections addObject:assetCollection];
                 }
             }
         }
@@ -118,6 +118,7 @@
     return assetCollection;
 }
 
+/// 检查有效性
 - (BOOL)checkValidFor:(PHAssetCollection *)assetCollection {
     if (![assetCollection isKindOfClass:[PHAssetCollection class]] ||
         assetCollection.estimatedAssetCount <= 0 ||

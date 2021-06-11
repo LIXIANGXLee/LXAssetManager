@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, LXAssetType){
 
 /// 相册资源数量
 @property(nonatomic, assign)NSInteger assetCount;
+
 /// 相册
 @property(nonatomic, strong)PHAssetCollection *assetCollection;
 
@@ -34,17 +35,25 @@ typedef NS_ENUM(NSInteger, LXAssetType){
 /// 记录当前选中状态（可用UI选中状态判断，需要的时候，手动设置）
 @property(nonatomic,assign)BOOL isSelect;
 
-/// 按照时间排序
+/// 加载数据 按照时间排序
 /// @param isAscending 资源根据时间排序的 isAscending == YES 升序
 /// 默认排序是降序排序 如果不执行此方法，获取的数据就是降序排序数据
-- (void)sortAllAssetsWithAscending:(BOOL)isAscending;
+- (void)reloadAllAssetsWithAscending:(BOOL)isAscending;
 
 /// 根据相册名获取相册下的所有phasset资源
+/// （如果没有数据，可能没有调用reloadAllAssetsWithAscending加载数据）
 - (void)fetchAllAssets:(void(^)(NSArray<LXAssetItem *> *assetItems))completionHandler;
+
+/// 根据相册名获取相册下的所有phasset资源
+/// （如果没有数据，可能没有调用reloadAllAssetsWithAscending加载数据）
+- (void)fetchAllAsset:(void(^)(NSArray<LXAssetItem*> *allAssetItems,
+                               NSArray<LXAssetItem*> *videoItems,
+                               NSArray<LXAssetItem*> *imageItems))completionHandler;
 
 /// 将资源按类型过滤
 /// @param type 需要的源类型
 /// @param completionHandler 回调参数
+/// （如果没有数据，可能没有调用reloadAllAssetsWithAscending加载数据）
 - (void)filterAssetsWithType:(LXAssetType)type
         handle:(void(^)(NSArray<LXAssetItem *> *assetItems))completionHandler;
                           
