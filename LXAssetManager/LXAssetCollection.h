@@ -25,15 +25,14 @@ typedef NS_ENUM(NSInteger, LXAssetType){
 
 /// 相册资源数量
 @property(nonatomic, assign)NSInteger assetCount;
+/// 相册
+@property(nonatomic, strong)PHAssetCollection *assetCollection;
 
 /// 相册第一个资源
 @property(nonatomic, weak)LXAssetItem *firstAssetItem;
 
-/// 相册
-@property(nonatomic, strong)PHAssetCollection *assetCollection;
-
-/// 队列(内部队列，外界不要修改)
-@property(nonatomic, weak)dispatch_queue_t fetchQueue;
+/// 记录当前选中状态（可用UI选中状态判断，需要的时候，手动设置）
+@property(nonatomic,assign)BOOL isSelect;
 
 /// 按照时间排序
 /// @param isAscending 资源根据时间排序的 isAscending == YES 升序

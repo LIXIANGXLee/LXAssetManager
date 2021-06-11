@@ -16,6 +16,14 @@
     "tag": "2.0.0"
   },
   "source_files": "LXAssetManager/**/*.{h,m}",
+  "public_header_files": [
+    "LXAssetManager/LXAssetManager.h",
+    "LXAssetManager/LXAssetSave.h",
+    "LXAssetManager/LXAuthorManager.h",
+    "LXAssetManager/LXAssetItem.h",
+    "LXAssetManager/LXAssetCollection.h",
+    "LXAssetManager/LXAssetThread.h"
+  ],
   "dependencies": {
     "SDWebImage": [
 

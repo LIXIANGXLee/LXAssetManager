@@ -7,6 +7,8 @@
 
 #import "LXAssetItem.h"
 #import <SDWebImage/SDWebImage.h>
+#import "LXAssetCache.h"
+#import "LXAssetManager.h"
 
 #define SCREEN_WDITH [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
@@ -36,10 +38,24 @@
 }
 
 - (void)fetchImage:(LXAssetImageType)type handler:(void (^)(UIImage * _Nullable))completionHandler {
+    
+    @LXWeakObj(self);
+    [[LXAssetManager shared].assetThread executeTask:^{
+    @LXStrongObj(self);
      CGSize size = CGSizeZero;
      switch (type) {
-         case LXAssetImageTypeThumbnail:
+         case LXAssetImageTypeThumbnail:{
+            UIImage *image = [[LXAssetCache shared].memoryCache objectForKey:self.phasset.localIdentifier];
+             if (image) {
+                 dispatch_async(dispatch_get_main_queue(), ^{
+                     if (completionHandler) {
+                         completionHandler(image);
+                     }
+                 });
+                 return;
+             }
              size = CGSizeMake(SCREEN_WDITH/4, SCREEN_WDITH/4);
+           }
              break;
          case LXAssetImageTypeMiddle:
              size = CGSizeMake(SCREEN_WDITH/2, SCREEN_WDITH/2);
@@ -50,8 +66,7 @@
          default:
              break;
      }
-     
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+
         PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
         option.synchronous = YES;
         [[PHImageManager defaultManager] requestImageForAsset:self.phasset
@@ -65,9 +80,13 @@
                         completionHandler(image);
                     }
                 });
+                if (type == LXAssetImageTypeThumbnail && image) {
+                    [[LXAssetCache shared].memoryCache setObject:image
+                                                          forKey:self.phasset.localIdentifier  cost:image.sd_memoryCost];
+                }
             }
         }];
-    });
+    }];
  }
 
  - (BOOL)checkAssetInCloud {

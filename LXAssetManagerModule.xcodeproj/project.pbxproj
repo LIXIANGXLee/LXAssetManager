@@ -194,7 +194,7 @@
 				C96A212325E4EA3900395BE4 /* Sources */,
 				C96A212425E4EA3900395BE4 /* Frameworks */,
 				C96A212525E4EA3900395BE4 /* Resources */,
-				CE44C89F7249482DD3D0DD27 /* [CP] Embed Pods Frameworks */,
+				EC2714ABE6F1C1625D39D240 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,7 +232,7 @@
 				C96A214925E4EA3A00395BE4 /* Sources */,
 				C96A214A25E4EA3A00395BE4 /* Frameworks */,
 				C96A214B25E4EA3A00395BE4 /* Resources */,
-				0DA9749CD3B14D6015DBF793 /* [CP] Embed Pods Frameworks */,
+				8891DBF5B6486B6D63155341 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,7 +315,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DA9749CD3B14D6015DBF793 /* [CP] Embed Pods Frameworks */ = {
+		8891DBF5B6486B6D63155341 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,23 +354,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE44C89F7249482DD3D0DD27 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LXAssetManagerModule/Pods-LXAssetManagerModule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LXAssetManagerModule/Pods-LXAssetManagerModule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LXAssetManagerModule/Pods-LXAssetManagerModule-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E40827C32920F4CF270CF647 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +374,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC2714ABE6F1C1625D39D240 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LXAssetManagerModule/Pods-LXAssetManagerModule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LXAssetManagerModule/Pods-LXAssetManagerModule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LXAssetManagerModule/Pods-LXAssetManagerModule-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F33E8E2A2AFD32A0FB268446 /* [CP] Check Pods Manifest.lock */ = {
@@ -600,12 +600,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LXAssetManagerModule",
+					"\"$(SRCROOT)/LXAssetManagerModule/LXAssetManager.framework\"",
+				);
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/LXAssetManagerModule/LXAssetManager.framework/Headers\"";
 				INFOPLIST_FILE = LXAssetManagerModule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = "--.LXAssetManagerModule";
 				PRODUCT_NAME = "萌萌";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";
@@ -621,12 +628,19 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XWNPFKK4U5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LXAssetManagerModule",
+					"\"$(SRCROOT)/LXAssetManagerModule/LXAssetManager.framework\"",
+				);
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/LXAssetManagerModule/LXAssetManager.framework/Headers\"";
 				INFOPLIST_FILE = LXAssetManagerModule/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_BUNDLE_IDENTIFIER = "--.LXAssetManagerModule";
 				PRODUCT_NAME = "萌萌";
 				STRINGS_FILE_OUTPUT_ENCODING = "UTF-8";

@@ -93,6 +93,14 @@ Pod::Spec.new do |spec|
   #
 
   spec.source_files  = "LXAssetManager/**/*.{h,m}"
+  spec.public_header_files = "LXAssetManager/LXAssetManager.h",
+                             "LXAssetManager/LXAssetSave.h",
+                             "LXAssetManager/LXAuthorManager.h",
+                             "LXAssetManager/LXAssetItem.h",
+                             "LXAssetManager/LXAssetCollection.h",
+                             "LXAssetManager/LXAssetThread.h"
+                             
+                             
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"

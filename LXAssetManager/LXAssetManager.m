@@ -7,11 +7,10 @@
 
 #import "LXAssetManager.h"
 #import "LXAssetCollection.h"
+#import "LXAssetCache.h"
 
 @interface LXAssetManager()
 @property (nonatomic, strong)NSMutableArray<LXAssetCollection *> *assetCollections;
-@property(nonatomic, strong)dispatch_queue_t fetchQueue;
-
 @property(nonatomic, strong)NSArray *types;
 @end
 
@@ -31,24 +30,32 @@
     if (self) {
         self.types = @[@(PHAssetCollectionTypeSmartAlbum),
                        @(PHAssetCollectionTypeAlbum)];
-        self.fetchQueue = dispatch_queue_create("LXAssetManager_Queue", DISPATCH_QUEUE_SERIAL);
-        [self reloadAllAssetCollections:self.types];
+
+        self.assetThread = [[LXAssetThread alloc] init];
     }
     return self;
 }
 
 - (void)fetchAllAssetCollections:(void (^)(NSArray<LXAssetCollection *> * _Nonnull))completionHandler {
-    dispatch_async(self.fetchQueue, ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
+    
+    @LXWeakObj(self);
+    [self.assetThread executeTask:^{
+    @LXStrongObj(self);
+      dispatch_async(dispatch_get_main_queue(), ^{
             if (completionHandler) {
                 completionHandler(self.assetCollections);
             }
         });
-    });
+    }];
 }
 
-- (void)reloadAllAssetCollections:(NSArray<NSNumber *> *)types {
-    dispatch_async(self.fetchQueue, ^{
+- (void)reloadAllAssetCollections:(NSArray<NSNumber *> *)types{
+    if (!types || types.count == 0) {
+        types = self.types;
+    }
+    @LXWeakObj(self);
+    [self.assetThread executeTask:^{
+    @LXStrongObj(self);
         [self.assetCollections removeAllObjects];
         [types enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj,
                                             NSUInteger idx,
@@ -57,13 +64,16 @@
                 [self fetchCollectionWithType:obj.integerValue];
             }
         }];
-    });
+    }];
 }
 
 - (void)clearAllCollections {
-    dispatch_async(self.fetchQueue, ^{
+    @LXWeakObj(self);
+    [self.assetThread executeTask:^{
+    @LXStrongObj(self);
         [self.assetCollections removeAllObjects];
-    });
+        [[LXAssetCache shared].memoryCache removeAllObjects];
+    }];
 }
 
 /// 获取系统相册
@@ -78,7 +88,6 @@
                                               NSUInteger idx, BOOL * _Nonnull stop) {
         __strong typeof(weakSelf)strongSelf = weakSelf;
         LXAssetCollection *assetCollection = [strongSelf creatAssetCollectionFrom:collection];
-        assetCollection.fetchQueue = self.fetchQueue;
         if (assetCollection && assetCollection.firstAssetItem) {
             if (collection.assetCollectionType == PHAssetCollectionTypeAlbum &&
                 collection.assetCollectionSubtype == PHAssetCollectionSubtypeAlbumRegular) {

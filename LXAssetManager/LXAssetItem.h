@@ -5,7 +5,7 @@
 //  Created by 李响 on 2020/3/9.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <Photos/Photos.h>
 
 NS_ASSUME_NONNULL_BEGIN

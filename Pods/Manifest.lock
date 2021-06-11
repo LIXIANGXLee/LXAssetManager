@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :path: "./"
 
 SPEC CHECKSUMS:
-  LXAssetManager: 27b40ac2ce7872538beaab8bdeb30e18f540a395
+  LXAssetManager: d4520edaaba9be6f564fa861e816a807d2fa9fea
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
 PODFILE CHECKSUM: 276589168692fb21a9a668ec2fb4cac1105fb81b

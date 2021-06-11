@@ -6,6 +6,7 @@
 //
 
 #import "LXAssetCollection.h"
+#import "LXAssetManager.h"
 
 @interface LXAssetCollection()
 @property (nonatomic, strong)NSMutableArray<LXAssetItem *> *assetItems;
@@ -23,9 +24,12 @@
 
 - (void)sortAllAssetsWithAscending:(BOOL)isAscending {
     if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(dispatch_get_main_queue())) == 0) {
-        dispatch_async(self.fetchQueue, ^{
+        @LXWeakObj(self);
+        [[LXAssetManager shared].assetThread executeTask:^{
+        @LXStrongObj(self);
             [self _sortAllAssetsWithAscending:isAscending];
-        });
+
+        }];
     }else{
         [self _sortAllAssetsWithAscending:isAscending];
     }
@@ -43,18 +47,24 @@
 }
 
 -(void)fetchAllAssets:(void (^)(NSArray<LXAssetItem *> * _Nonnull))completionHandler {
-    dispatch_async(self.fetchQueue, ^{
+    
+    @LXWeakObj(self);
+    [[LXAssetManager shared].assetThread executeTask:^{
+    @LXStrongObj(self);
         dispatch_async(dispatch_get_main_queue(), ^{
             if (completionHandler) {
                 completionHandler(self.assetItems);
             }
         });
-    });
+    }];
 }
 
 - (void)filterAssetsWithType:(LXAssetType)type
                       handle:(void (^)(NSArray<LXAssetItem *> * _Nonnull))completionHandler {
-    dispatch_async(self.fetchQueue, ^{
+    
+    @LXWeakObj(self);
+    [[LXAssetManager shared].assetThread executeTask:^{
+    @LXStrongObj(self);
         NSPredicate *predicate = nil;
         switch (type) {
             case LXAssetTypeAll:
@@ -80,17 +90,20 @@
                 completionHandler([self.assetItems filteredArrayUsingPredicate:predicate]);
             }
         });
-    });
+
+    }];
 }
 
 - (void)resetAssetItem {
-    dispatch_async(self.fetchQueue, ^{
+    @LXWeakObj(self);
+    [[LXAssetManager shared].assetThread executeTask:^{
+    @LXStrongObj(self);
         [self.assetItems enumerateObjectsUsingBlock:^(LXAssetItem *assetItem,
                                                       NSUInteger idx, BOOL * _Nonnull stop) {
             assetItem.number = 0;
             [assetItem.userInfo removeAllObjects];
         }];
-    });
+    }];
 }
 
 /**获取图片和视频资源*/

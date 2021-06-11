@@ -6,10 +6,10 @@
 //
 
 #import "ViewController.h"
-#import <LXAssetSave.h>
-#import <LXAuthorManager.h>
-#import <LXAssetManager.h>
-#import <LXAssetCollection.h>
+#import <LXAssetManager/LXAssetSave.h>
+#import <LXAssetManager/LXAuthorManager.h>
+#import <LXAssetManager/LXAssetManager.h>
+#import <LXAssetManager/LXAssetCollection.h>
 
 @interface ViewController ()
 
@@ -25,10 +25,10 @@
     
 //    NSLog(@"============%@",[[LXAssetManager shared] filterAssetCollectionsWithType:LXAssetCollectionTypeUser]);
 //
-    
     [LXAuthorManager checkAuthorization:LXAuthorizationTypePhoto callBack:^(BOOL isPass) {
         if (isPass) {
-            
+          
+            [[LXAssetManager shared] reloadAllAssetCollections:nil];
             [[LXAssetManager shared] fetchAllAssetCollections:^(NSArray<LXAssetCollection *> * _Nonnull assetCollections) {
                 
                 [assetCollections enumerateObjectsUsingBlock:^(LXAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -36,13 +36,16 @@
                     [obj fetchAllAssets:^(NSArray<LXAssetItem *> * _Nonnull assetItems) {
                         [assetItems enumerateObjectsUsingBlock:^(LXAssetItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                             [obj fetchImage:LXAssetImageTypeThumbnail handler:^(UIImage * _Nullable image) {
-                                NSLog(@"===-=--=============%@",image);
+//                                NSLog(@"===-=--=============%@",image);
+                            }];
+                            [obj fetchImage:LXAssetImageTypeThumbnail handler:^(UIImage * _Nullable image) {
+    //                                NSLog(@"===-=--=============%@",image);
                             }];
                         }];
-                        
-                        [obj sortAllAssetsWithAscending:YES];
+
+//                        [obj sortAllAssetsWithAscending:YES];
                     }];
-                    
+
 //                    NSLog(@"-=-=-=-=-=-====%@==%@==%ld",obj.title, obj.assetCollection.localIdentifier, obj.assetCount);
 
                 }];
