@@ -25,8 +25,10 @@ typedef NS_ENUM(NSInteger, LXAssetCloudStatus) {
 };
 
 @class LXAssetItem;
+/// 从cloud加载数据的进度处理
 typedef void (^FetchCloudProgressHandler)(double progress);
-typedef void (^FetchCloudCompletionHandler)(LXAssetItem * __nullable assetItem);
+/// 从cloud加载数据完成回调处理
+typedef void (^FetchCloudCompletionHandler)(LXAssetItem * _Nullable assetItem);
 
 @interface LXAssetItem : NSObject
 
@@ -43,15 +45,14 @@ typedef void (^FetchCloudCompletionHandler)(LXAssetItem * __nullable assetItem);
 /// 暂时没用上
 @property(nonatomic, strong)NSMutableDictionary *userInfo;
 
-/// 获取资源图片
+/// 获取资源图片 LXAssetImageType == LXAssetImageTypeThumbnai
+/// 使用SDwebimage做了图片异步解码和图片内存缓存机制，让数据显示UI更流畅 更快捷
+/// 其他类型LXAssetImageTypeMiddle LXAssetImageTypeOrigin只做了图片异步解码
 /// @param type 资源类型
-/// LXAssetImageTypeThumbnail = 0, 缩略图
-/// LXAssetImageTypeMiddle,        中等图
-/// LXAssetImageTypeOrigin,        原图
 - (void)fetchImage:(LXAssetImageType)type
            handler:(void(^)(UIImage * _Nullable image))completionHandler;
 
-/// 获取缩略图
+/// 获取缩略图，使用SDwebimage做了图片异步解码和图片内存缓存机制，让数据显示UI更流畅 更快捷
 - (void)fetchImageWithThumbnail:(void(^)(UIImage * _Nullable image))completionHandler;
 
 /// 判断资源是否为视频
@@ -66,8 +67,8 @@ typedef void (^FetchCloudCompletionHandler)(LXAssetItem * __nullable assetItem);
 /// 获取云cloud asset资源
 /// @param progressHandler 进度回调
 /// @param completionHandler 完成回调
-- (void)requestCloudData:(FetchCloudProgressHandler)progressHandler
-              completion:(FetchCloudCompletionHandler)completionHandler;
+- (void)requestCloudData:(FetchCloudProgressHandler _Nullable)progressHandler
+              completion:(FetchCloudCompletionHandler _Nullable)completionHandler;
 
 /// 取消云下载任务
 - (void)cancelRequestDataFromCloud;

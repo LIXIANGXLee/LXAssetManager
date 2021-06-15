@@ -12,6 +12,8 @@
 #import "LXAssetDefine.h"
 
 @interface LXAssetManager()
+
+@property(nonatomic, strong)dispatch_queue_t  fetchQueue;
 @property (nonatomic, strong)NSMutableArray<LXAssetCollection *> *assetCollections;
 @property (nonatomic, strong)NSArray *types;
 @end
@@ -33,18 +35,47 @@
         self.types = @[@(PHAssetCollectionTypeSmartAlbum),
                        @(PHAssetCollectionTypeAlbum)];
 
-        self.assetThread = [[LXAssetThread alloc] init];
+        self.fetchQueue = dispatch_queue_create("LXASSETMANAGER_QUEUE", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
 
 - (void)fetchAllAssetCollections:(void (^)(NSArray<LXAssetCollection *> * _Nonnull))completionHandler {
     ASYNC_THREAD(
-     dispatch_async(dispatch_get_main_queue(), ^{
-           if (completionHandler) {
-               completionHandler(self.assetCollections);
-           }
-      });
+      if (completionHandler) {
+        ASYNC_MAINTHREAD(
+            completionHandler(self.assetCollections);
+        )
+      }
+    )
+}
+
+- (void)fetchRecentsAssetCollection:(void (^)(LXAssetCollection * _Nonnull))completionHandler {
+    ASYNC_THREAD(
+      if (completionHandler) {
+        ASYNC_MAINTHREAD(
+            completionHandler(self.assetCollections.firstObject);
+        )
+      }
+    )
+}
+
+-(void)fetchRecentsAssetItems:(void (^)(NSArray<LXAssetItem *> * _Nullable))completionHandler {
+    ASYNC_THREAD(
+      if (completionHandler) {
+        LXAssetCollection *assetCollection = self.assetCollections.firstObject;
+         if (assetCollection) {
+             [assetCollection fetchAllAssets:^(NSArray<LXAssetItem *> * _Nonnull assetItems) {
+                 ASYNC_MAINTHREAD(
+                   completionHandler(assetItems);
+                  )
+             }];
+         }else{
+             ASYNC_MAINTHREAD(
+               completionHandler(nil);
+             )
+         }
+      }
     )
 }
 
@@ -72,8 +103,8 @@
 
 - (void)clearAllCollections {
     ASYNC_THREAD(
-     [self.assetCollections removeAllObjects];
-     [[LXAssetCache shared].memoryCache removeAllObjects];
+      [self.assetCollections removeAllObjects];
+      [[LXAssetCache shared].memoryCache removeAllObjects];
      )
 }
 

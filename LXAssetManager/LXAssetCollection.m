@@ -7,7 +7,6 @@
 
 #import "LXAssetCollection.h"
 #import "LXAssetManager.h"
-#import "LXAssetDefine.h"
 
 @interface LXAssetCollection()
 @property (nonatomic, strong)NSMutableArray<LXAssetItem *> *assetItems;
@@ -24,17 +23,6 @@
 }
 
 - (void)reloadAllAssetsWithAscending:(BOOL)isAscending {
-    if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(dispatch_get_main_queue())) == 0) {
-        ASYNC_THREAD(
-           [self _sortAllAssetsWithAscending:isAscending];
-         )
-    }else{
-        [self _sortAllAssetsWithAscending:isAscending];
-    }
-}
-
-/// 刷新数据
-- (void)_sortAllAssetsWithAscending:(BOOL)isAscending {
     [self.assetItems removeLastObject];
     PHFetchResult * result = [self fetchAssetsInAssetCollection:self.assetCollection
                                                       ascending:isAscending];
@@ -47,13 +35,9 @@
 }
 
 -(void)fetchAllAssets:(void (^)(NSArray<LXAssetItem *> * _Nonnull))completionHandler {
-    ASYNC_THREAD(
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (completionHandler) {
-                completionHandler(self.assetItems);
-            }
-        });
-    )
+    if (completionHandler) {
+        completionHandler(self.assetItems);
+    }
 }
 
 - (void)fetchAllAsset:(void (^)(NSArray<LXAssetItem *> * _Nonnull,
@@ -78,42 +62,36 @@
 
 - (void)filterAssetsWithType:(LXAssetType)type
                       handle:(void (^)(NSArray<LXAssetItem *> * _Nonnull))completionHandler {
-    ASYNC_THREAD(
-        NSPredicate *predicate = nil;
-        switch (type) {
-            case LXAssetTypeAll:
-                predicate = [NSPredicate predicateWithValue:YES];
-                break;
-            case LXAssetTypeImage: {
-                [NSPredicate predicateWithBlock:^BOOL(LXAssetItem *assetItem,
-                                                      NSDictionary<NSString *,id> * _Nullable bindings) {
-                    return [assetItem isImage];
-                }];
-            } break;
-            case LXAssetTypeVideo: {
-                [NSPredicate predicateWithBlock:^BOOL(LXAssetItem *assetItem,
-                                                      NSDictionary<NSString *,id> * _Nullable bindings) {
-                    return [assetItem isVideo];
-                }];
-            } break;
-        }
-        NSArray * items = [self.assetItems filteredArrayUsingPredicate:predicate];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (completionHandler) {
-                completionHandler(items);
-            }
-        });
-     )
+    NSPredicate *predicate = nil;
+    switch (type) {
+        case LXAssetTypeAll:
+            predicate = [NSPredicate predicateWithValue:YES];
+            break;
+        case LXAssetTypeImage: {
+            [NSPredicate predicateWithBlock:^BOOL(LXAssetItem *assetItem,
+                                                  NSDictionary<NSString *,id> * _Nullable bindings) {
+                return [assetItem isImage];
+            }];
+        } break;
+        case LXAssetTypeVideo: {
+            [NSPredicate predicateWithBlock:^BOOL(LXAssetItem *assetItem,
+                                                  NSDictionary<NSString *,id> * _Nullable bindings) {
+                return [assetItem isVideo];
+            }];
+        } break;
+    }
+    NSArray * items = [self.assetItems filteredArrayUsingPredicate:predicate];
+    if (completionHandler) {
+        completionHandler(items);
+    }
 }
 
 - (void)resetAssetItem {
-    ASYNC_THREAD(
       [self.assetItems enumerateObjectsUsingBlock:^(LXAssetItem *assetItem,
                                                    NSUInteger idx, BOOL * _Nonnull stop) {
          assetItem.number = 0;
          [assetItem.userInfo removeAllObjects];
       }];
-     )
 }
 
 /**获取图片和视频资源*/

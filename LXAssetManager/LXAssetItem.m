@@ -11,8 +11,6 @@
 #import "LXAssetManager.h"
 #import "LXAssetDefine.h"
 
-#define SCREEN_WDITH_A [[UIScreen mainScreen] bounds].size.width
-
 @interface LXAssetItem()
 
 @property(nonatomic, copy)FetchCloudProgressHandler progressHandler;
@@ -49,17 +47,17 @@
 }
 
 - (void)fetchImage:(LXAssetImageType)type handler:(void (^)(UIImage * _Nullable))completionHandler {
-    ASYNC_THREAD(
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
      CGSize size = CGSizeZero;
      switch (type) {
          case LXAssetImageTypeThumbnail:{
             UIImage *image = [[LXAssetCache shared].memoryCache objectForKey:self.phasset.localIdentifier];
              if (image) {
-                 dispatch_async(dispatch_get_main_queue(), ^{
+                 ASYNC_MAINTHREAD(
                      if (completionHandler) {
                          completionHandler(image);
                      }
-                 });
+                 )
                  return;
              }
              size = CGSizeMake(SCREEN_WDITH_A/4, SCREEN_WDITH_A/4);
@@ -83,19 +81,19 @@
                                                 resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
             if (result) {
                 UIImage *image = [SDImageCoderHelper decodedImageWithImage:result];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    if (completionHandler) {
-                        completionHandler(image);
-                    }
-                });
-                if (type == LXAssetImageTypeThumbnail && image) {
-                    [[LXAssetCache shared].memoryCache setObject:image
-                                                          forKey:self.phasset.localIdentifier  cost:image.sd_memoryCost];
-                }
+                ASYNC_MAINTHREAD(
+                     if (type == LXAssetImageTypeThumbnail && image) {
+                         [[LXAssetCache shared].memoryCache setObject:image
+                                                               forKey:self.phasset.localIdentifier  cost:image.sd_memoryCost];
+                     }
+                     if (completionHandler) {
+                         completionHandler(image);
+                     }
+                )
             }
         }];
-   )
- }
+    });
+}
 
  - (BOOL)checkAssetInCloud {
      if (self.phasset == nil || (![self isVideo] && ![self isImage])) {
@@ -151,7 +149,6 @@
      self.progressHandler = progressHandler;
      self.completionHandler = completionHandler;
      self.status = LXAssetCloudStatusDownloading;
-     
      if ([self isImage]) {
          [self requestImageFromCloud];
      } else if ([self isVideo]) {
@@ -167,16 +164,14 @@
      options.version = PHImageRequestOptionsVersionOriginal;
      options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
      options.networkAccessAllowed = YES;
-     options.progressHandler = ^(double progress,
-                                 NSError *__nullable error,
-                                 BOOL *stop,
-                                 NSDictionary *__nullable info) {
+     options.progressHandler = ^(double progress, NSError *__nullable error,
+                                 BOOL *stop, NSDictionary *__nullable info) {
          @LXStrongObj(self)
-         dispatch_async(dispatch_get_main_queue(), ^{
+         ASYNC_MAINTHREAD(
              if (self.progressHandler) {
                  self.progressHandler(progress);
              }
-         });
+         )
      };
      
      PHImageManager * manager = [PHImageManager defaultManager];
@@ -187,7 +182,7 @@
                                                       UIImageOrientation orientation,
                                                       NSDictionary * _Nullable info) {
          @LXStrongObj(self)
-         dispatch_async(dispatch_get_main_queue(), ^{
+         ASYNC_MAINTHREAD(
              if (imageData) {
                  self.status = LXAssetCloudStatusDownloadedSucc;
                  if (self.completionHandler) {
@@ -203,7 +198,7 @@
                      self.completionHandler(nil);
                  }
              }
-         });
+         )
      }];
  }
 
@@ -218,11 +213,11 @@
                                 NSError *__nullable error,
                                 BOOL *stop,
                                 NSDictionary *__nullable info) {
-         dispatch_async(dispatch_get_main_queue(), ^{
+         ASYNC_MAINTHREAD(
              if (weakSelf.progressHandler) {
                  weakSelf.progressHandler(progress);
              }
-         });
+         )
      };
      PHImageManager * manager = [PHImageManager defaultManager];
      _requestId = [manager requestAVAssetForVideo:self.phasset
@@ -230,7 +225,7 @@
                                     resultHandler:^(AVAsset * _Nullable asset,
                                                     AVAudioMix * _Nullable audioMix,
                                                     NSDictionary * _Nullable info) {
-         dispatch_async(dispatch_get_main_queue(), ^{
+         ASYNC_MAINTHREAD(
              if (asset) {
                  weakSelf.status = LXAssetCloudStatusDownloadedSucc;
                  if (weakSelf.completionHandler) {
@@ -246,7 +241,7 @@
                      weakSelf.completionHandler(nil);
                  }
              }
-         });
+         )
      }];
  }
 

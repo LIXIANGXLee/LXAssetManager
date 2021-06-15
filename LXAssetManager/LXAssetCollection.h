@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, LXAssetType){
 /// 相册资源数量
 @property(nonatomic, assign)NSInteger assetCount;
 
-/// 相册
+/// 相册资源 必须设置
 @property(nonatomic, strong)PHAssetCollection *assetCollection;
 
 /// 相册第一个资源

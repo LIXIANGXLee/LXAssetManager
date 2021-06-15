@@ -26,8 +26,8 @@ typedef void(^FailCallBlock)(NSString *error);
  */
 + (void)saveVideoToassetWithUrl:(NSURL *)url
            assetCollectionTitle:(NSString *)assetCollectionTitle
-                        success:(SuccessCallBlock)successCallBack
-                           fail:(FailCallBlock)failCallBack API_AVAILABLE(ios(9.0));
+                        success:(SuccessCallBlock _Nullable)successCallBack
+                           fail:(FailCallBlock _Nullable)failCallBack API_AVAILABLE(ios(9.0));
 
 
 /**将图片写入相册
@@ -39,8 +39,8 @@ typedef void(^FailCallBlock)(NSString *error);
  */
 + (void)saveImageToassetWithImage:(UIImage *)image
              assetCollectionTitle:(NSString *)assetCollectionTitle
-                          success:(SuccessCallBlock __nullable)successCallBack
-                             fail:(FailCallBlock __nullable)failCallBack API_AVAILABLE(ios(9.0));
+                          success:(SuccessCallBlock _Nullable)successCallBack
+                             fail:(FailCallBlock _Nullable)failCallBack API_AVAILABLE(ios(9.0));
 
 @end
 

@@ -15,7 +15,6 @@
 #import "LXAuthorManager.h"
 #import "LXAssetItem.h"
 #import "LXAssetCollection.h"
-#import "LXAssetThread.h"
 
 FOUNDATION_EXPORT double LXAssetManagerVersionNumber;
 FOUNDATION_EXPORT const unsigned char LXAssetManagerVersionString[];

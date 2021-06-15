@@ -37,11 +37,11 @@
                                                     success:successCallBack
                                                        fail:failCallBack];
                 }else{
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        if (failCallBack) {
-                            failCallBack([error localizedFailureReason]);
-                        }
-                    });
+                    ASYNC_MAINTHREAD(
+                         if (failCallBack) {
+                             failCallBack([error localizedFailureReason]);
+                         }
+                     )
                 }
             }];
         }
@@ -73,11 +73,11 @@
                                                     success:successCallBack
                                                        fail:failCallBack];
                 }else{
-                    dispatch_async(dispatch_get_main_queue(), ^{
+                    ASYNC_MAINTHREAD(
                         if (failCallBack) {
                             failCallBack([error localizedFailureReason]);
                         }
-                    });
+                    )
                 }
             }];
         }
@@ -98,18 +98,18 @@
             [self addCameraAssetToAlbum:assetLocalIdentifier
                               assetCollection:assetCollection
                             completionHandler:^(BOOL success, NSError *error) {
-                dispatch_async(dispatch_get_main_queue(), ^{
+                ASYNC_MAINTHREAD(
                     if (success) {
                         if (successCallBack) { successCallBack(); }
                     }else {
                         if (failCallBack) { failCallBack([error localizedFailureReason]); }
                     }
-                });
+                )
             }];
         }else{
-            dispatch_async(dispatch_get_main_queue(), ^{
+            ASYNC_MAINTHREAD(
                 if (failCallBack) { failCallBack(@"获取相册失败"); }
-            });
+            )
         }
     }];
 }
