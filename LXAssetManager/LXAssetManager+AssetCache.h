@@ -1,26 +1,24 @@
 //
-//  LXAssetCache.h
+//  LXAssetManager+AssetCache.h
 //  LXAssetManager
 //
-//  Created by 李响 on 2021/6/11.
+//  Created by 李响 on 2021/6/18.
 //
 
-#import <Foundation/Foundation.h>
-#import <SDWebImage/SDWebImage.h>
+#import <LXAssetManager/LXAssetManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LXAssetCache : NSObject
-@property(nonatomic, strong)SDMemoryCache *memoryCache;
-
-/// 单例模式
-+ (instancetype)shared;
+@interface LXAssetManager (AssetCache)
 
 /// 设置最大缓存图片数量
 - (void)setMaxCacheCount:(NSUInteger)maxCount;
 
 /// 设置最大缓存空间大小, 单位 M
 - (void)setMaxCacheSize:(NSUInteger)maxSize;
+
+/// 默认设置
+- (void)setDefault;
 
 @end
 

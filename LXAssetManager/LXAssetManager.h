@@ -7,11 +7,13 @@
 
 #import <Foundation/Foundation.h>
 #import <Photos/Photos.h>
+#import <SDWebImage/SDWebImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @class LXAssetCollection, LXAssetItem;
 @interface LXAssetManager : NSObject
+@property(nonatomic, strong, readonly)SDMemoryCache *memoryCache;
 
 /// 单例模式
 + (instancetype)shared;

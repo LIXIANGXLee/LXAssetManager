@@ -7,7 +7,6 @@
 
 #import "LXAssetItem.h"
 #import <SDWebImage/SDWebImage.h>
-#import "LXAssetCache.h"
 #import "LXAssetManager.h"
 #import "LXAssetDefine.h"
 
@@ -51,7 +50,7 @@
      CGSize size = CGSizeZero;
      switch (type) {
          case LXAssetImageTypeThumbnail:{
-            UIImage *image = [[LXAssetCache shared].memoryCache objectForKey:self.phasset.localIdentifier];
+            UIImage *image = [[LXAssetManager shared].memoryCache objectForKey:self.phasset.localIdentifier];
              if (image) {
                  ASYNC_MAINTHREAD(
                      if (completionHandler) {
@@ -83,7 +82,7 @@
                 UIImage *image = [SDImageCoderHelper decodedImageWithImage:result];
                 ASYNC_MAINTHREAD(
                      if (type == LXAssetImageTypeThumbnail && image) {
-                         [[LXAssetCache shared].memoryCache setObject:image
+                         [[LXAssetManager shared].memoryCache setObject:image
                                                                forKey:self.phasset.localIdentifier  cost:image.sd_memoryCost];
                      }
                      if (completionHandler) {

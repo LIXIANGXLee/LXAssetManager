@@ -7,15 +7,17 @@
 
 #import "LXAssetManager.h"
 #import "LXAssetCollection.h"
-#import "LXAssetCache.h"
 #import "LXAuthorManager.h"
 #import "LXAssetDefine.h"
+#import "LXAssetManager+AssetCache.h"
 
 @interface LXAssetManager()
 
-@property(nonatomic, strong)dispatch_queue_t  fetchQueue;
+@property(nonatomic, strong)SDMemoryCache *memoryCache;
+@property(nonatomic, strong)dispatch_queue_t fetchQueue;
 @property (nonatomic, strong)NSMutableArray<LXAssetCollection *> *assetCollections;
 @property (nonatomic, strong)NSArray *types;
+
 @end
 
 @implementation LXAssetManager
@@ -36,6 +38,12 @@
                        @(PHAssetCollectionTypeAlbum)];
 
         self.fetchQueue = dispatch_queue_create("LXASSETMANAGER_QUEUE", DISPATCH_QUEUE_SERIAL);
+        
+        /// 初始化图片内存缓存
+        self.memoryCache = [[SDMemoryCache alloc] init];
+
+        /// 使用默认配置
+        [self setDefault];
     }
     return self;
 }
@@ -104,7 +112,7 @@
 - (void)clearAllCollections {
     ASYNC_THREAD(
       [self.assetCollections removeAllObjects];
-      [[LXAssetCache shared].memoryCache removeAllObjects];
+      [self.memoryCache removeAllObjects];
      )
 }
 

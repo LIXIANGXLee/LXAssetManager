@@ -24,6 +24,9 @@
     "LXAssetManager/LXAssetCollection.h",
     "LXAssetManager/LXAssetThread.h"
   ],
+  "xcconfig": {
+    "OTHER_LDFLAGS": "-ObjC"
+  },
   "dependencies": {
     "SDWebImage": [
 
