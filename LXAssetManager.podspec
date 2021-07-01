@@ -97,8 +97,7 @@ Pod::Spec.new do |spec|
                              "LXAssetManager/LXAssetSave.h",
                              "LXAssetManager/LXAuthorManager.h",
                              "LXAssetManager/LXAssetItem.h",
-                             "LXAssetManager/LXAssetCollection.h",
-                             "LXAssetManager/LXAssetThread.h"
+                             "LXAssetManager/LXAssetCollection.h"
                              
   spec.xcconfig = { "OTHER_LDFLAGS" => "-ObjC" }
   # spec.exclude_files = "Classes/Exclude"
